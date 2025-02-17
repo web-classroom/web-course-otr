@@ -37,7 +37,7 @@
           <h1>Introduction</h1>
 
           <aside class="notes">
-            Slides by Bertil Chapuis, Olivier Lemer, Olivier Tischauser &
+            Slides by Bertil Chapuis, Olivier Lemer, Olivier Tischhauser &
             Vincent Guidoux
           </aside>
         </section>
@@ -49,8 +49,7 @@
                         - Uniform Resource Locator (URL)
                         - HyperText Transfer Protocol (HTTP)
                         - Hello, World (Client/Server)!
-                    </textarea
-          >
+                    </textarea>
         </section>
 
         <section>
@@ -71,7 +70,7 @@
                         Conceptual model of the protocol structure allowing *the internet*.
 
                         Consists of 4 layers :
-                        - **Application Layer** : Interfaces and communication protocoles, specific to the applications using the network. <span class="detail">(HTTP, HTTPS, FTP, SSH, SMTP, IMAP, Telnet, ...)</span>
+                        - **Application Layer** : Interfaces and communication protocols, specific to the applications using the network. <span class="detail">(HTTP, HTTPS, FTP, SSH, SMTP, IMAP, Telnet, ...)</span>
                         - **Transport Layer** : Adds advanced communication features : connexions, reliability, flow control, etc. <span class="detail">(TCP, UDP, ...)</span>
                         - **Internet Layer** : Routes packets between hosts, identified by an IP address. <span class="detail">(IP, ICMP, IPsec, ...)</span>
                         - **Link Layer** : Communication on actual tangible media. <span class="detail">(ARP, PPP, MAC, Ethernet, Wifi, DSL, Fibre, ...)</span>
@@ -85,7 +84,7 @@
                         Notes:
 
                         Some details on the mentionned protocols, if interested.
-                        
+
                         Link Layer
                         - ARP is a protocol used to map IP addresses to MAC addresses.
                         - PPP is a protocol used to establish a direct connection between two nodes.
@@ -97,9 +96,8 @@
                         Transport layer
                         - TCP is a connection-oriented protocol that ensures the delivery of a message to its destination. It is responsible for the reliability of the communication, the flow control and the congestion control.
                         - UDP is a connectionless protocol that does not ensure the delivery of a message to its destination. It is used when reliability is not required but responsiveness is valued, for example for video streaming.
-                        
-                    </textarea
-            >
+
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -108,11 +106,10 @@
                         ![Networking](images/network_reminder.svg)
 
                         Notes:
-                        
+
                         The OSI model, when compared to the IPS model, is more abstract and more complete. It is used to describe the different layers of a theoretical network, but is not used in practice. The IPS model is a simplification of the OSI model that more closely resembles reality, and is used to describe the Internet.
-                        
-                    </textarea
-            >
+
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -128,14 +125,14 @@
                         </div>
 
                         The domain name realm is structured into a tree of (sub)domains, grouped into **zones**. Each zone is managed by a (group of) **DNS server(s)**.
-                        
+
                         <img alt="Networking" src="images/network_dns.svg" style="width: 65%;" />
 
                         Uses TCP for zone transfer and UDP for name queries.
 
                         Notes:
 
-                        The <b>Domain Name System (DNS)</b> is a hierarchical and decentralized naming system (phone book) for computers connected to the Internet. 
+                        The <b>Domain Name System (DNS)</b> is a hierarchical and decentralized naming system (phone book) for computers connected to the Internet.
                         It translates domain names to IP addresses needed for locating and identifying computers.
 
                         A DNS request happens roughly as follows:
@@ -161,15 +158,14 @@
                         ensure redundancy and fault tolerance. DNS Zone Transfer
                         is what is used to ensure that these replication servers
                         all hold consistent data.
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                         ## <i class="fas fa-network-wired"></i> Zone file
 
-                        Each DNS zone has a file containing de list of the IP addresses associated to its domain names, within **Resource Records (RR)**.
+                        Each DNS zone has a file containing the list of the IP addresses associated to its domain names, within **Resource Records (RR)**.
 
                         ```text
                         $ORIGIN example.com.    ; start of this zone
@@ -182,8 +178,8 @@
 
                         Notes:
 
-                        - A Domain Name System (DNS) zone file is a text file that describes a DNS zone. 
-                        - A DNS zone is a subset, often a single domain, of the hierarchical domain name structure of the DNS. 
+                        - A Domain Name System (DNS) zone file is a text file that describes a DNS zone.
+                        - A DNS zone is a subset, often a single domain, of the hierarchical domain name structure of the DNS.
                         - The zone file contains mappings between domain names and IP addresses and other resources, organized in the form of text representations of resource records (RR).
 
                         #### Resource Records
@@ -199,7 +195,7 @@
                         - `record_type`: the type of information in the record. For example, `A` and `AAAA` for *address record* (IPv4 and IPv6, respectively), `MX` for the mail host of the SMTP domain, or `CNAME` for declaring aliases.
                         - `record_data`: the data associated to the name, depending on the `record_type`. For example, an IPv4 address for type `A` records, or another domain name for `CNAME`.
 
-                        
+
                         #### More about DNS
 
                         Mozilla provides a nice cartoon of how DNS works, what are its limitations in terms of security and privacy, and why DNS over HTTPS is needed.
@@ -209,8 +205,7 @@
                         Cloudflare provides a good introduction to DNS, DNS amplification attacks and DNS flood attacks.
 
                         https://www.cloudflare.com/learning/ddos/glossary/domain-name-system-dns/
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown>
@@ -238,9 +233,8 @@
                         Notes:
 
                         - `dig`: the second column of an answer output by `dig` is the TTL (Time To Live) of the record, in seconds. It indicates how long the record can be cached before it should be refreshed.
-                        
-                    </textarea
-            >
+
+                    </textarea>
           </section>
 
           <section
@@ -276,8 +270,7 @@
                         ```bash
                         traceroute heig-vd.ch
                         ```
-                    </textarea
-            >
+                    </textarea>
           </section>
         </section>
 
@@ -326,22 +319,21 @@
 
                     ## <i class="fas fa-window-maximize"></i>  History
 
-                    Tim Berners-Lee proposed the architecture of what became known as the World Wide Web. He created the first web server, web browser, and webpage at the CERN in 1990. 
-                    In 1991, he announced his creation, marking the moment the Web was first made public. 
+                    Tim Berners-Lee proposed the architecture of what became known as the World Wide Web. He created the first web server, web browser, and webpage at the CERN in 1990.
+                    In 1991, he announced his creation, marking the moment the Web was first made public.
 
                     <img src="images/web_tim.jpg" style="width: 100%"/>
 
                     Today, the Web is constently evolving under the guidance of the World Wide Web Consortium (W3C).
 
                     https://worldwideweb.cern.ch/
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
             <textarea data-template>
                         ## <i class="fas fa-window-maximize"></i> World Wide Web
-                        
+
                         <img alt="The Web" src="images/HTTP_layers.png" style="width: 60%;" />
 
                         <div class="detail">
@@ -349,8 +341,7 @@
                           Read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 
                         </div>
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -374,8 +365,7 @@
                         </div>
 
                         </div>
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -384,8 +374,8 @@
 
                         <div class="centered">
 
-                        #### WHATWG 
-                        
+                        #### WHATWG
+
                         (Web Hypertext Application Technology Working Group)
 
                         *Apple, Google, Mozilla, Microsoft*
@@ -399,16 +389,14 @@
                         https://whatwg.org/
 
                         </div>
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
             <textarea data-template>
                         ## <i class="fas fa-window-maximize"></i>  Mozilla's Web APIs
                         <img alt="The Web" src="images/web_api.png" style="width: 80%;" />
-                    </textarea
-            >
+                    </textarea>
           </section>
         </section>
 
@@ -437,8 +425,7 @@
                       | Query | `?param=value` | Parameters associated to the resource. |
                       | Fragment | `#fragment` | Path to a secondary resource. |
 
-                    </textarea
-            >
+                    </textarea>
           </section>
         </section>
 
@@ -467,8 +454,7 @@
 
                     HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server (text) protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.
 
-                  </textarea
-            >
+                  </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -482,13 +468,13 @@
                         User-Agent: curl/7.58.0
                         Accept: */*
                         ```
-                        
+
                         **Requests** usually have:
                         - a method (`GET`)
                         - a resource (`/text.html?param=value`)
                         - some headers (e.g. `User-Agent: curl/7.58.0`)
                         - an optional body (depends on the methods)
-                        
+
                         The most common **Methods** are:
                         - `GET`: Returns the resource.
                         - `POST`: Create resource.
@@ -503,11 +489,10 @@
                         PUT is used to create a resource if it does not exist, or to update it if it does. It is not always clear what the difference is with POST, which is also used to create resources. The difference is that PUT is idempotent, which means that if you send the same request multiple times, the result will always be the same. This is not the case with POST, which can have side effects on the server, such as creating a new resource each time it is called.
 
                         DELETE is not used when browsing. However it is used when exposing resources over what is called REST (representational state transfer), which uses HTTP methods to create, read, update and delete resources (CRUD).
-                        
+
                         There exist yet more methods, such as PATCH, TRACE, OPTIONS, CONNECT, etc. but they are not commonly used.
-                        
-                    </textarea
-            >
+
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -516,17 +501,16 @@
 
                         The Unix world is at the origin of many popular text protocols, such as FTP, POP3, SMTP or IMAP.
 
-                        HTTP follows the same philosophy, which allows to easily observe what transits on the network. 
+                        HTTP follows the same philosophy, which allows to easily observe what transits on the network.
 
                         Use telnet to open a TCP connection and perform a simple get request.
-                   
+
                         ```
                         telnet www.google.com 80
                         GET / HTTP/1.1
                         Host: www.google.com
                         ```
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -541,30 +525,29 @@
                         Access-Control-Allow-Origin: *
                         Date: Mon, 16 Sep 2019 20:07:29 GMT
                         200 OK
-                        ```    
-                        
+                        ```
+
                         **Responses** usually have:
                         - a status code (`200 OK`)
                         - some headers (e.g. `Content-Length: 6`)
                         - an optional body (text, HTML, json)
-                        
+
                         The most common **Status Codes** are:
                         - `200 OK`: The request has succeeded.
                         - `301 Moved Permanently`: The resource has a new location.
                         - `404 Not Found`: The server has not found the resource.
                         - `500 Internal Server Error`: The server has encountered an error while processing the request.
                         - `418 I'm a teapot`: The server refuses to brew coffee because it's a teapot. Remnant of a 1998 April Fool's joke that refuses to die.
-                        
+
                         Notes:
-                            
+
                         The HTTP responses belong to five classes:
                         - 1xx informational response – the request was received, continuing process
                         - 2xx successful – the request was successfully received, understood, and accepted
                         - 3xx redirection – further action needs to be taken in order to complete the request
                         - 4xx client error – the request contains bad syntax or cannot be fulfilled
-                        - 5xx server error – the server failed to fulfil an apparently valid request         
-                    </textarea
-            >
+                        - 5xx server error – the server failed to fulfil an apparently valid request
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -584,8 +567,7 @@
                         Notes:
 
                         HTTPS encrypts the communication between the client and the server, which makes it impossible to read the content of the requests and responses. It encrypts the entire HTTP message, including the headers, the request or response body, and the requested resource itself. Note however that DNS is not an encrypted protocol, so the domain name of the server is still visible in the first phase of name resolution.
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
@@ -594,19 +576,18 @@
                         ## <i class="fas fa-user-secret"></i> Why encryption?
 
                         Credentials and tokens can be captured by eavesdropping.
-                        
-                        What happen when you run the following command while listening with [Wireshark](https://www.wireshark.org/)? 
-                        
-                        What does the Authorization header contains?
-                        
+
+                        What happens when you run the following command while listening with [Wireshark](https://www.wireshark.org/)?
+
+                        What does the Authorization header contain?
+
                         ```bash
                         curl http://user:pass@www.heig-vd.ch
                         ```
-                        
+
                         ![](images/wireshark.png)
 
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section
@@ -618,11 +599,10 @@
                         ## <i class="fas fa-hand-paper"></i> Hands on!
 
                         Get to know your methods and status codes!
-                        
+
                         ### What is status code `418`?
-                        
-                    </textarea
-            >
+
+                    </textarea>
           </section>
 
           <section
@@ -632,12 +612,11 @@
           >
             <textarea data-template>
                         ## <i class="fa-solid fa-face-smile-wink"></i> `418 - I'm a teapot`
-                        
+
                         https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418
-                        
+
                         The HTTP 418 I'm a teapot client error response code indicates that the server refuses to brew coffee because it is a teapot. This error is a reference to Hyper Text Coffee Pot Control Protocol which was an April Fools' joke in 1998.
-                    </textarea
-            >
+                    </textarea>
           </section>
 
           <section
@@ -648,9 +627,8 @@
             <textarea data-template>
                         <img src="images/http_zine.png" style="width: 30%" />
 
-                        https://wizardzines.com/zines/http/    
-                    </textarea
-            >
+                        https://wizardzines.com/zines/http/
+                    </textarea>
           </section>
         </section>
         <section>
@@ -663,8 +641,7 @@
                         ## <i class="fas fa-network-wired"></i> Web Application Architecture
 
                         <img src="images/web-application.svg" style="width: 60%" />
-                    </textarea
-            >
+            </textarea>
           </section>
 
           <section data-markdown>
@@ -678,8 +655,8 @@
                         - Visual Studio Code
                         - Github Classroom
                         - ESLint
-                    </textarea
-            >
+                        - Prettier
+                    </textarea>
           </section>
         </section>
 
