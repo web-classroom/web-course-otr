@@ -946,19 +946,19 @@
                         a:hover { background-color: red; }
                         ```
 
-                        The :nth-child() CSS pseudo-class matches elements based on their position in a group.
-
-                        ```css
-                        td:nth-child(2n) { background-color: gray; }
-                        ```
-
                         https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
                     </textarea>
                 </section>
                 <section data-markdown style="font-size: 0.75em">
                     <textarea data-template>
-                        ## <i class="fas fa-paint-brush"></i> The nth child
+                        ## <i class="fas fa-paint-brush"></i> The nth child pseudo class
+
+                         The `:nth-child()` CSS pseudo-class matches elements based on their indexes in the child list of their parents.
+
+                        ```css
+                        td:nth-child(2n) { background-color: gray; } /* matches all tds that are even indexed children of their parent */
+                        ```
 
                         The `nth-child` pseudo-class takes an argument of the form `an+b`, where
 
@@ -970,7 +970,7 @@
 
                         ```css
                         /* "if there is a value of n such that I'm the 2n'th child, then select me" */
-                        /* i.e. "select every even child" */
+                        /* i.e. "select every p that is an even child" */
                         p:nth-child(2n) {
                             color: red;
                         }
@@ -1132,8 +1132,8 @@
                         ```css
                         p {
                             text-align: center;
-                            line-height: 2em;
-                            letter-spacing: 2em;
+                            line-height: 12px;
+                            letter-spacing: 2px;
                             text-decoration: underline;
                             text-transform: uppercase;
                         }
@@ -1275,6 +1275,19 @@
 
                         You can always use the `inherit` keyword to force inheritance.
 
+                        ```css
+                        div {
+                          border: 3px solid;
+                        }
+
+                        p {
+                          border: inherit;
+                        }
+                        ```
+                        ```html
+                        <div><p>some text</p></div> <!-- p will inherit the border from div-->
+                        ```
+
                         https://developer.mozilla.org/en-US/docs/Web/CSS/Inheritance
                     </textarea>
                 </section>
@@ -1317,7 +1330,7 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Box Model
 
-                        The Box model (`display: block`) is a box that wraps around every HTML elements and consists of: margins, borders, padding and the actual content.
+                        The Box model (`display: block`) is a box that wraps around every HTML element and consists of: margins, borders, padding and the actual content.
 
                         <img src="images/box-model.png" style="width: 28%">
 
@@ -1340,7 +1353,7 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Box Model
 
-                        The Box model (`display: block`) is a box that wraps around every HTML elements and consists of: margins, borders, padding and the actual content.
+                        The Box model (`display: block`) is a box that wraps around every HTML element and consists of: margins, borders, padding and the actual content.
 
                         <img src="images/box-model.png" style="width: 28%">
 
@@ -1358,7 +1371,9 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Width and Height
 
-                        The width and height properties are used to set the width and height of an element.
+                        By default block elements (`display:block`) take the whole width of their parent (containing) element.
+
+                        The width and height properties can be used to set the width and height of an element.
 
                         ```css
                         .box {
@@ -1391,7 +1406,11 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Box Sizing
 
-                        By default, the width and height properties are applied to the content-box. The actual width and height will thus be larger by the size of the padding, border and margin.
+                        The actual size of the box can vary depending on how the width and height properties are applied.
+
+                        This behaviour is controlled by the `box-sizing` property.
+
+                        By default (`box-sizing: content-box`), the width and height properties are applied to the content-box. The actual width and height will thus be larger by the size of the padding, border and margin.
 
                         <img src="images/css-box-sizing-1.png" style="width:60%">
 
@@ -1402,10 +1421,7 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Box Sizing
 
-                        The `box-sizing` property changes this behavior, by specifying which box model should be used.
-
-                        For example, use `box-sizing: border-box` to include the padding and border in an element's total
-                        width.
+                        The total width and height computation of the box can be changed to include the padding and border (but not margin !) by using `box-sizing: border-box`;
 
                         <img src="images/css-box-sizing-2.png" style="width: 60%">
 
@@ -1429,7 +1445,7 @@
                         ```
 
                         The overflow property can have one of the following values:
-                        - **visible** (the default) – Content is rendered outside
+                        - **visible** (the default) – The content is rendered outside the element's box
                         - **hidden** – The content is clipped to hide overflowing content
                         - **scroll** – Looks the same as hidden, but always with scrollbars
                         - **auto** – Browser displays scrollbars only if content overflows
@@ -1571,21 +1587,22 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Common units
 
-                        Relative units:
-                        - **%** : percentage relative to a property of the parent element
-                        - **em** : relative to the inherited font-size of the element
-                        - **rem** : relative to the inherited font-size of the root element
-
                         Absolute units:
                         - **px** : pixels, should only be used for the screen
                         - **cm** : centimeters, should only be used for print
                         - **pt** : points, often used for setting font size for print (1pt = 1/72 of an inch)
 
+                        Relative units:
+                        - **%** : percentage relative to a property of the parent element
+                        - **em** : relative to the inherited font-size of the element
+                        - **rem** : relative to the inherited font-size of the root element
+
                         Viewport units:
-                        - **vw** : 1% of viewport width
-                        - **vh** : 1% of viewport height
+                        - **vw** : 1vw = 1% of viewport width
+                        - **vh** : 1vh = 1% of viewport height
                         - **vmin** :  the smaller of vw and vh
                         - **vmax** : the larger of vw and vh
+                        - Viewport units are useful for displaying full width/height elements.
 
                         https://developer.mozilla.org/en-US/docs/Web/CSS/length#units
 
@@ -1661,7 +1678,7 @@
 
                         The flexible box layout module (Flexbox) is a one-dimensional layout model that aims to provide a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word “flex”).
 
-                        An element can be made a flex container by setting `display: flex`.
+                        An element can be made a flex container by setting `display:flex`.
 
                         ```html
                         <div class="container">
@@ -1678,7 +1695,7 @@
                         }
                         .item {
                             order: 1;
-                            flex-grow: 1
+                            flex-grow: 1; /* Elements will grow to occupy the container's free space */
                         }
                         ```
                         https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
@@ -1700,9 +1717,9 @@
                     <textarea data-template>
                         ## <i class="fas fa-paint-brush"></i> Flexbox
 
-                        One of the main concepts in the flexbox layout is the `flex-direction` which determines the <i>main axis</i>> along which the elements will be laid out (i.e. the direction of the flow). The <i>cross axis</i> is the axis running perpendicular to the main axis.
+                        One of the main concepts in the flexbox layout is the `flex-direction` which determines the <i>main axis</i> along which the elements will be laid out (i.e. the direction of the flow). The <i>cross axis</i> is the axis running perpendicular to the main axis.
 
-                        Elements can be made to flow horizontally (`flex-direction: row`) or vertically (`flex-direction: column`).
+                        Elements can be made to flow horizontally (`flex-direction:row`) or vertically (`flex-direction:column`).
 
                         Note that given that flexbox is a one-dimensional layout model, we can control only one axis at at time (in contrast to two dimensional layout models like the grid layout).
 
@@ -1745,7 +1762,7 @@
 
                         Similarly to the flexbox layout, there are properties for the parent (Grid Container) and others for the children (Grid Items).
 
-                        - **Container (parent) properties** : grid-template-column, grid-template-rows, grid-template-areas, grid-template, ...
+                        - **Container (parent) properties** : grid-template-columns, grid-template-rows, grid-template-areas, grid-template, ...
                         - **Item (child) properties** : grid-column-start, grid-column-end, grid-column, grid-row, grid-area, ...
 
                         <img src="images/grid-layout.svg" style="width:60%"/>
@@ -1761,7 +1778,7 @@
                         ## <i class="fas fa-paint-brush"></i> Grid Layout
                         The basics of setting up a grid layout consist of :
 
-                        - Defining a grid container by setting its display property : `display: grid`
+                        - Defining a grid container by setting its display property : `display:grid`
                         - Defining the columns and row sizes with `grid-template-columns` and `grid-template-rows`
                         - Place the child elements into the grid with `grid-column` (shorthand for `grid-column-start / grid-column-end`) and `grid-row` (shorthand for `grid-row-start / grid-row-end`)
                         - As we will see later, it is also possible to define the whole grid layout with [grid-template-areas](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-template-areas) at the container level and then use [grid-area](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-area) at the child element level to assign it to a given area
@@ -1817,7 +1834,7 @@
 
                         Media queries allow for conditional evaluation of rulesets.
 
-                        They are useful to adapt the layout to different screen sizes and dimensions, or device types (print vs. screen.
+                        They are useful to adapt the layout to different screen sizes and dimensions, or device types (print vs. screen).
 
                         ```css
                         @media only screen and (min-width : 600px) {
@@ -1872,10 +1889,11 @@
                             --main-bg-color: #fff;
                         }
 
-                        .subcontent { /* Local variables ; override global variables */
-                            --main-color: #c06;
-                            --main-bg-color: #fff;
+                        .subcontent { /* Local variables ; override global variables (for elements with .subcontent class) */
+                            --main-color: #f0f;
+                            --main-bg-color: #daf7a6 ;
                             --content-specific-color: #f00;
+                            background-color: var(--main-bg-color);
                         }
                         ```
 
