@@ -38,7 +38,7 @@
             <h1>Foundations of JavaScript</h1>
 
             <aside class="notes">
-              Slides by Bertil Chapuis, Olivier Lemer, Olivier Tischauser &
+              Slides by Bertil Chapuis, Olivier Lemer, Olivier Tischhauser &
               Vincent Guidoux
             </aside>
           </section>
@@ -54,8 +54,7 @@
                                 - Functions
                                 - Etc.
                             - Regular Expressions
-                        </textarea
-            >
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.6em">
             <textarea data-template>
@@ -63,7 +62,7 @@
                     On completion of this part, students will be able to:
 
                     - Cite all the environments where JavaScript can be executed.
-                    - Can write JavaScript code in all the environments where it can be executed.
+                    - Write JavaScript code in all the environments where it can be executed.
                     - Explain the difference between interpreted and compiled languages.
                     - Read and write basic JavaScript code.
                     - Read regular expressions.
@@ -72,8 +71,7 @@
                     - Explain the difference between `null` and `undefined`.
 
 
-                </textarea
-            >
+                </textarea>
           </section>
         </section>
 
@@ -85,8 +83,8 @@
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i></i> Question 1
-                            Quelles elements HTML sont sélectionnés par le sélecteur suivant?
-                            
+                            Quels elements HTML sont sélectionnés par le sélecteur suivant?
+
                             ```
                             li > li
                             ```
@@ -115,18 +113,17 @@
 
                             <div class="spoiler">
 
-                            Réponse E : `li > li` sélectionne tous les `li` qui sont *directement* contenus dans un `li`. Ce n'est le cas d'aucun object ici, puisque tout `li` est contenu dans un `ul`. Aucun élément n'est donc selectionné.
+                            Réponse E : `li > li` sélectionne tous les `li` qui sont *directement* contenus dans un `li`. Ce n'est le cas d'aucun object ici, puisque tout `li` est contenu dans un `ul`. Aucun élément n'est donc sélectionné.
 
                             </div>
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.7em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i></i> Question 2
                             A quel rendu correspond le code HTML/CSS suivant?
-                            
+
                             ```
                             <div id="a">
                                 <div id="b">
@@ -171,19 +168,18 @@
                             <div class="spoiler">
 
                             Réponse C.
-                            
+
                             `#a` a un border noir et un contenu rouge. Cela ne peut donc être que b) ou c), puisque les autres ont un border rouge. `#a` a aussi un padding de 10px, ce qui signifie que `#b` laissera un espace de 10px autour de lui, laissant apparaitre le rouge. Il doit donc s'agir de la réponse C.
-                                
+
                             </div>
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.7em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i></i> Question 3
                             A quel rendu correspond le code HTML/CSS suivant?
-                            
+
                             ```
                             <table>
                                 <tr>
@@ -260,18 +256,17 @@
                             Réponse B.
 
                             `rowspan` ordonne à la cellule de s'étaler sur 2 lignes, il s'agit donc soit de A soit de B. Ensuite, `colspan` ordonne à la cellule de s'étaler sur 2 colonnes. Il ne peut donc s'agir que de B.
-                                
+
                             </div>
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.7em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i></i> Question 4
-                            Qui gagne ?
-                            
+                            Quelle est la couleur du background de `.el` ?
+
                             ```html
                             <div id="container">
                                 <div class="el" style="background: red"></div>
@@ -299,17 +294,16 @@
 
                             Réponse A.
 
-                            Le selecteur inlined dans le code HTML prend le dessus. Sinon, c'aurait été B, car le selecteur `div > .el` est moins spécifique que `#container .el`. Revoir algorithme de selection pour plus de détails.
+                            Le sélecteur inlined dans le code HTML prend le dessus. Sinon, c'aurait été B, car le sélecteur `div > .el` est moins spécifique que `#container .el`. Revoir algorithme de selection pour plus de détails.
 
                             </div>
 
-                        </textarea
-            >
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.85em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i></i> Question 5
-                            Quel est l'ordre de priorité des selecteurs en CSS, d'après l'algorithme de spécificité (algorithme de résolution des conflits entre deux déclarations) ?
+                            Quel est l'ordre de priorité des sélecteurs en CSS, d'après l'algorithme de spécificité (algorithme de résolution des conflits entre deux déclarations) ?
 
                             Notes:
 
@@ -317,10 +311,9 @@
 
                             Revoir slides sur algorithme de selection pour la réponse.
 
-                            </div>  
-                            
-                        </textarea
-            >
+                            </div>
+
+                        </textarea>
           </section>
         </section>
 
@@ -334,45 +327,43 @@
                             ## <i class="fab fa-js"></i> JavaScript
 
                             JavaScript is a lightweight, **interpreted**, or **just-in-time** compiled programming language with first-class functions.
-                            
-                            ### Interpreted 
+
+                            ### Interpreted
                             The interpreter reads the source code and executes it directly.
                             It does not require the compilation of the program into machine-code.
-                            
+
                             ### Just-in-time (JIT) compiled
-                            The interpreter compiles the hot parts of the source code into machine-code and executes it directly.
+                            The interpreter compiles the hot parts (frequently executed) of the source code into machine-code and executes it directly.
                             The rest of the program is interpreted.
-                            
+
                             ### First-class functions
                             Functions are treated like any other value.
                             They can be stored in variables, passed as arguments to other functions, created within functions, and returned from functions.
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.6em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> JavaScript
                             JavaScript is a **prototype-based**, multi-paradigm, **dynamic** language, supporting **object-oriented**, **imperative**, and **declarative** (e.g. functional programming) styles.
-                            
+
                             ### Dynamic
                             Performs at runtime what static languages perform at compilation time (e.g. dynamic typing).
-                            
+
                             ### Prototype-based and object-oriented
                             Behavior reuse (and inheritence) is achieved by cloning and extending objects.
-                            
+
                             ### Imperative
                             Imperative programming is a programming paradigm that uses statements that change a program's state.
-                            
+
                             ### Declarative
                             Declarative programming is a programming paradigm that expresses the logic of a computation without describing its control flow.
-                            
+
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -380,9 +371,9 @@
                             ## <i class="fab fa-js"></i> ECMAScript
 
                             ECMAScript (or ES) is a specification created by ECMA International to standardize JavaScript.
-                            
+
                             <img src="images/js_history_es6.png" alt="JavaScript History" style="width: 80%; margin-top: 100px;">
-                            
+
 
                             Notes:
 
@@ -406,14 +397,13 @@
 
                             ES6: 2015
 
-                            ES7: 2016
+                            Since 2016, versions are named by year (ECMAScript/ES2016, ES2017, ES2018, ...)
 
-                            etc..
+                            One major release in June each year.
 
-                            One major release in June each year
+                            As of writing, the latest (15th) edition is ECMAScript 2024, published in July 2024.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.65em">
@@ -429,11 +419,10 @@
                             - 2019: Oracle releases the first stable version of GraalVM, making JavaScript a high performance language for the JVM, later integrated in their RDBMS through MLE.
 
                             <img src="images/logo_v8.png" style="width: 150px; float: left" />
-                            
+
                             <img src="images/logo_nodejs.png" style="margin-left: 40px;width: 130px; float: left" />
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -441,10 +430,9 @@
                             ## <i class="fab fa-js"></i> Client-side and Server-side Programming
 
                             Today, JavaScript is commonly used in browsers (client-side), on servers (server-side), and at the edge (cloudflare, fastly, etc.).
-                            
+
                             <img src="images/Fetching_a_page.png" style="width: 60%; margin-top: 40px" />
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -452,21 +440,19 @@
                             ## <i class="fab fa-js"></i> ECMAScript 6 Support
 
                             <img src="images/js_compat_table.png" style="width: 70%" />
-                            
+
                             https://compat-table.github.io/compat-table/es6/
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Eloquent Javascript
 
-                            <img src="images/js_eloquent_javascript.jpg" style="width: 25%" />
-                            
+                            <img src="images/EJS4e_Comp.webp" style="width: 25%" />
+
                             https://eloquentjavascript.net/
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -474,11 +460,10 @@
                             ## <i class="fab fa-js"></i> Javascript: The Good Parts
 
                             <img src="images/javascript-good-parts.webp" style="width: 60%" />
-                            
+
                             https://www.oreilly.com/library/view/javascript-the-good/9780596517748/
 
-                        </textarea
-            >
+                        </textarea>
           </section>
         </section>
 
@@ -492,16 +477,16 @@
                             ## <i class="fab fa-js"></i> Client-side Javascript
 
                             Adding JavaScript to a Web page is as simple as adding a `script` tag to the HTML document.
-                            
+
                             ```html
                             <script type='text/javascript'>
                               console.log('Hello, World!');
                               document.writeln('Hello, World!')
                             </script>
                             ```
-                            
-                            The `src` attribute is used to specify the location of the JavaScript file.
-                            
+
+                            It may also be added as an external file through the `src` attribute.
+
                             ```html
                             <script src="script.js"></script>
                             ```
@@ -509,11 +494,10 @@
                             The `type` attribute is used to specify the type of the script. The default value is `text/javascript`. The `module` value is used to load a JavaScript module (ECMAScript 6).
 
                             The `defer` attribute is used to defer the execution of the script until the page has been loaded.
-                            
-                            The `async` attribute is used to load the script asynchronously. 
-                            
-                        </textarea
-            >
+
+                            The `async` attribute is used to load the script asynchronously.
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -521,7 +505,7 @@
                             ## <i class="fab fa-js"></i> Server-side Javascript
 
                             After installing nodejs, a REPL (Read-Eval-Print-Loop) can be obtained by typing the node command:
-                            
+
                             ```bash
                             $ node
                             Welcome to Node.js v12.8.0.
@@ -529,10 +513,9 @@
                             > console.log("Hello, World!")
                             Hello World!
                             ```
-                            
+
                             https://nodejs.org/api/repl.html
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -540,21 +523,23 @@
                             ## <i class="fas fa-hand-paper"></i> Get to know the REPL commands
 
                             `.clear` - Reset the REPL context to an empty object and clears any multi-line expression currently being input.
-                            
+
                             `.exit` - Close the I/O stream, causing the REPL to exit.
-                            
+
                             `.help` - Show this list of special commands.
-                            
+
                             `.save` - Save the current REPL session to a file: > .save ./file/to/save.js
-                            
+
                             `.load` - Load a file into the current REPL session. > .load ./file/to/load.js
-                            
+
                             `.editor` - Enter editor mode (`<ctrl>-D` to finish, `<ctrl>-C` to cancel).
 
                             https://nodejs.org/api/repl.html#repl_repl_commands
-                            
-                        </textarea
-            >
+
+                            Notes:
+
+                            The `.clear` command works only if the repl is started programmatically (via a script) and not via the `node` command where it is just an alias for `.break`.
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.65em">
@@ -572,7 +557,7 @@
                             - `Null`: Unique value `null`
 
                             In a dynamic language you don't specify the type when you declare a variable and the type of a variable can change.
-                            
+
                             ECMAScript also defines a special mutable type called **object** for collections of properties (objects and array).
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types
@@ -596,8 +581,7 @@
                             not get overridden by mistake by an inheritting
                             class (see next chapter on OOP), for example.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -606,7 +590,7 @@
 
                             An object in JavaScript is a mutable unordered
                             collection of properties, each consisting of:
-                            
+
                             - A property key (either a string or a symbol)
                             - A value (any ECMAScript language value)
 
@@ -631,15 +615,14 @@
                             We will learn more about objects (and
                             object-oriented programming in JS) in the next
                             chapter.
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Arrays
 
-                            Arrays are a globally defined, resizable, list-like object. **They can contain a mix of different
+                            Arrays are a globally defined, resizable, list-like objects. **They can contain a mix of different
                             data types.**
 
                             ```js
@@ -665,20 +648,19 @@
                             ```
 
                             We will learn more about arrays in the next chapter about Object-Oriented JavaScript.
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> typeof Operator
-                            
+
                             The `typeof` operator is useful for determining the type of a variable or a value.
-                            
+
                             The operand can be of any type:
                             - If the operand is a primitive value, `typeof` returns a string indicating the type of the primitive value.
                             - If the operand is an object, `typeof` returns `"object"`.
-                            
+
                             ```js
                             console.log(typeof 1);  // number
                             console.log(typeof {}); // object
@@ -699,17 +681,16 @@
                             Note also that an Array falls in the category of
                             objects.
 
-                            Regarding Array, we have seen that arrays are actually objects under the hood. See OOP chapter to understand why in detail.
-                            
-                        </textarea
-            >
+                            Regarding Array, we will see in the OOP chapter that arrays are actually objects under the hood.
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Arithmetic Operators
-                            
-                            An arithmetic operator takes numerical values (either literals or variables) as their operands and returns a single numerical value.
+
+                            An arithmetic operator takes numerical values (either literals or variables) as its operands and returns a single numerical value.
 
                             ```js
                             1 + 1; // addition
@@ -722,8 +703,7 @@
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -743,19 +723,18 @@
                             ```
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Assignment Operators
-                            
+
                             An assignment operator assigns a value to its left operand based on the value of its right operand.
-                            
+
                             ```js
-                            let a = 1; 
-                            
+                            let a = 1;
+
                             // arithmetic assignments
                             a += 1; // addition
                             a -= 1; // subtraction
@@ -774,16 +753,15 @@
                             ```
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Destructuring Assignment
-                            
+
                             The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
-                            
+
                             ```js
                             var [a, b] = [1, 2];
                             console.log(a); // 1
@@ -805,8 +783,7 @@
                             ```
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.7em">
@@ -835,8 +812,7 @@
                             - `a && b` : `b` will *not* be evaluated if `a` is **`false`**, since the result will be **`false`** regardless of `b`.
                             - `a || b` : `b` will *not* be evaluated if `a` is **`true`**, since the result will be **`true`** regardless of `b`.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -852,28 +828,27 @@
                                     name: 'Dinah'
                                 }
                             };
-                              
+
                             console.log(adventurer.dog?.name); // expected output: undefined
                             ```
 
                             In this example, if we had omitted the `?` symbol, it would have failed with a `TypeError: adventurer.dog is undefined`.
 
                             <div class="detail">
-                                
+
                             Introduced with ECMA2020.
-                            
+
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
-                                                                
+
                             </div>
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.67em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Comparison Operators
-                            
-                            Comparison operators return a logical value based on whether the comparison is true. 
+
+                            Comparison operators return a logical value based on whether the comparison is true.
 
                             ```js
                             1 == 1;
@@ -895,15 +870,14 @@
 
                             **Strict equality** compares both the type and the value.
                             It is recommended to use strict equality (===) and strict inequality (!==) operators.
-                            
+
                             ```js
                               "1" === 1 // false
                               "1" !== 1 // true
                             ```
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.65em">
@@ -911,15 +885,15 @@
                             ## <i class="fab fa-js"></i> Variable declaration statements
 
                             The `var` statement declares a **non-block-scoped** variable, optionally initializing it to a value. Its scope is its current execution context, i.e. either the enclosing function or, if outside any function, global. It can be **re-declared**.
-                            
+
                             ```js
                             var x = 1;
                             if (true) { var x = 2; } // same variable
                             console.log(x); // 2
                             ```
-                            
+
                             The `let` statement declares a **block-scoped** local variable, optionally initializing it to a value. Its scope is the block in which it is declared.
-                            
+
                             ```js
                             let x = 1;
                             { let x = 2; } // different variable (in a new scope)
@@ -928,30 +902,29 @@
                             ```
 
                             The `const` statement declares a **block-scoped** constant. The value of a constant cannot change through re-assignment, and it can't be redeclared.
-                            
+
                             ```js
                             const x = 1;
                             x = 2; // TypeError: Assignment to constant variable.
                             ```
-                            
-                            A single statement can define multiple variables or constants: `let one = 1, two = 2;`.
+
+                            A single statement can define multiple variables or constants: `let one=1, two=2;`.
 
                             Notes:
 
-                            The differences between `var` and `let` are important.
+                            The differences between `var` and `let§` are important.
 
                             ### Scope
 
                             - The scope of a `var` is its enclosing function, or global. This means a `var` declared in an `if` block will still exist outside that block.
-                            - The scope of a `let` is its enclosing **block**, meaning a `let` variable declared in an `if` block will no longer exist otside that block.
+                            - The scope of a `let` is its enclosing **block**, meaning a `let` variable declared in an `if` block will no longer exist outside that block.
 
                             ### Re-declaration
 
                             A `var` can be re-declared, in which case the previous declaration is overridden. On the other hand, trying to re-declare a `let` variable (within the same scope) will result in an error.
-                            
 
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -959,7 +932,7 @@
                             ## <i class="fab fa-js"></i> Conditional Execution
 
                             In JavaScript, conditional execution is controlled by the `if` statement.
-                            
+
                             ```js
                             let num = prompt("Enter a number");
                             if (num > 0) {
@@ -970,8 +943,7 @@
                                 alert(`${num} is zero`);
                             }
                             ```
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -979,7 +951,7 @@
                             ## <i class="fab fa-js"></i> Switch
 
                             Sometimes a switch looks better than an `if...elseif...else` statement.
-                            
+
                             ```js
                             let val = prompt("Enter a letter");
                             switch(val) {
@@ -994,8 +966,7 @@
                                 break;
                             }
                             ```
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1003,7 +974,7 @@
                             ## <i class="fab fa-js"></i> While and Do While
 
                             *while* and *do while* are used to loop until a condition is met.
-                            
+
                             ```js
                             let num = 0;
                             while (num < 10) {
@@ -1011,7 +982,7 @@
                               num += 1;
                             }
                             ```
-                            
+
                             ```js
                             let echo = "";
                             do {
@@ -1019,9 +990,8 @@
                                 console.log(echo);
                             } while (echo != "stop");
                             ```
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1048,9 +1018,9 @@
                             The `for...of` statement creates a loop iterating over iterable objects.
 
                             ```js
-                            let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9];
-                            for (let num of nums) {
-                                console.log(num);
+                            let chars = ['a', 'b', 'c', 'd', 'e', 'f'];
+                            for (let char of chars) {
+                                console.log(char);
                             }
                             ```
 
@@ -1067,8 +1037,7 @@
 
                             would print `0`, `1`, `2`, `3`, `4`, and `5`, i.e. the indices of the array.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1076,32 +1045,31 @@
                             ## <i class="fab fa-js"></i> JavaScript Break and Continue
 
                             The `break` statement terminates the current loop.
-                            
+
                             The `continue` statement terminates the execution of the current iteration and continues the execution of the loop with the next iteration.
-                            
+
                             `break` and `continue` can also be used with labelled statements, but please don't.
-                            
+
                             ```js
                             mylabel:
                             for (let num = 0; num < 5; num++) {
-                              if (num === 5) {
+                              if (num === 3) {
                                 continue mylabel;
                               }
-                              console.log(num)
+                              console.log(num) // will output 0 1 2 4
                             }
                             ```
-                            
+
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> JavaScript Exceptions
- 
+
                             In Javascript, runtime errors can be handled using the `try...catch` statement.
-                            
+
                             ```js
                             try {
                               variable; // ReferenceError: variable is not defined
@@ -1109,9 +1077,9 @@
                               // Fails silently
                             }
                             ```
-                            
+
                             Exceptions can be triggered  using `throw` and `Error`:
-                            
+
                             ```js
                             throw new Error("AAHHARG!!!");
                             ```
@@ -1128,8 +1096,7 @@
                             which are thrown when the block is being
                             executed, are caught by try-catch blocks.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.7em">
@@ -1138,9 +1105,9 @@
 
                             A function is created with an expression that starts with the keyword `function` and can be assigned to a regular variable.
                             It can have parameters and may `return` a value.
-                            
+
                             #### Declaration Notation
-                            
+
                             ```js
                             function square(x) {
                               return x * x;
@@ -1150,18 +1117,17 @@
                                 return x * x;
                             }
                             ```
-                            
+
                             #### Arrow Notation
-                            
+
                             ```js
                             var square = x => x * x
                             // or
                             var square = (x) => {
                               return x * x;
-                            } 
+                            }
                             ```
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1169,7 +1135,7 @@
                             ## <i class="fab fa-js"></i> JavaScript Function Parameters
 
                             Function parameters can be made optional by specifying default values.
-                            
+
                             ```js
                             var square = function(x = 2) {
                               return x * x;
@@ -1179,16 +1145,15 @@
                             console.log(square(undefined)) // 4
                             ```
 
-                            The default value is used if
+                            If an argument is not provided, it behaves as if `undefined` were provided.
+
+                            Therefore, the default value is used if:
                             - that argument is not provided, or
                             - `undefined` is provided.
-                            
+
                             This means that optional parameters need not be last.
 
-                            By default, the default value of a parameter is `undefined`.
-                            
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1196,18 +1161,17 @@
                             ## <i class="fab fa-js"></i> JavaScript Recursion
 
                             It is fine for a function to call itself.
-                            
+
                             ```js
                             function factorial(n) {
-                              return n == 1 ? n : n * factorial(n-1); 
+                              return n == 1 ? n : n * factorial(n-1);
                             }
                             console.log(factorial(5)) // 5 * 4 * 3 * 2 * 1 = 120
                             ```
-                            
+
                             .. as long as it does not overflow the call stack.
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.75em">
@@ -1223,15 +1187,14 @@
 
                             - Function parameters: local to the **function body**. <span class="detail">  They are added to the **call stack** every time a function is called and freed when the function returns. </span>
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Higher-Order Functions
 
-                            Higher-order functions allow us to abstract over actions, not just values. 
+                            Higher-order functions allow us to abstract over actions, not just values.
                             For example, we can have functions that create new functions.
 
                             ```js
@@ -1242,18 +1205,31 @@
                             console.log(greaterThan10(11)); // true
                             ```
 
+                            We can also pass functions as arguments.
+                            ```js
+                            // we will see later that this function exists on JS Arrays
+                            function map(elements, transform) {
+                              let result = [];
+                              for (let element of elements) {
+                                result.push(transform(element));
+                              }
+                              return result;
+                            }
+
+                            let numbers = [1,2,3,4,5,6];
+                            console.log(map(numbers, x => x * 2)); // [2,4,6,8,10,12]
+                            ```
                             https://eloquentjavascript.net/05_higher_order.html
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ### <i class="fa fa-hand-paper"></i> JavaScript Closure
-                            
+
                             A closure is the combination of a function and the local scope within which that function was declared.
-                            
+
                             ```js
                             function wrap(value) {
                               let v = value;
@@ -1277,11 +1253,10 @@
                             console.log(c()); // 0
                             console.log(c()); // 1
                             ```
-                                
+
                             </div>
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
         </section>
 
@@ -1292,30 +1267,28 @@
           <section data-markdown data-visibility="hidden">
             <textarea data-template>
                             <img src="images/genie-regles-souhait-regex-premier-coup.jpg" style="width: 50%; margin: auto" />
-                        </textarea
-            >
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i> Regular Expressions
 
-                            Regular expressions are patterns used to **match** and **extract** character combinations in strings. 
+                            Regular expressions are patterns used to **match** and **extract** character combinations in strings.
 
                             It is useful for validating inputs, parsing files, extracting information from free text.
-                            
+
                             For instance, given the format for [registration plates](https://fr.wikipedia.org/wiki/Plaque_d%27immatriculation_suisse
-                            ) in Switzerland: 
+                            ) in Switzerland:
                             - Validate that the given string is a valid registration plate
-                            - Extract all the registration plates listed in a unstructured text 
-                            
+                            - Extract all the registration plates listed in an unstructured text
+
                             <div class="detail">
-                                                        
+
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
                             </div>
-                            
-                        </textarea
-            >
+
+                        </textarea>
           </section>
           <section data-markdown style="font-size: 0.65em">
             <textarea data-template>
@@ -1330,23 +1303,22 @@
                             const re1 = /ab+c/;
                             const re2 = new RegExp(/ab+c/);
                             ```
-                            
+
                             A regular expression is usually built with the following constructs:
-                            
+
                             - **Character Classes** (`.`, `\s`, `\d`, ...) that distinguish types of chararters (resp. any, whitespace or digit)
                             - **Character sets** (`[A-Z]`, `[a-z]`, `[0-9]`, `[abc]`, ...) that match any of the enclosed characters (resp. uppercase letters, lowercase letters, digits, and any of `a`, `b` or `c`)
                             - **Either operator** (`x|y`) that match either the left or right handside values
                             - **Quantifiers** (`*`, `+`, `?`, `{n}`, `{n,m}`) that indicate the number of times an expression matches
                             - **Boundaries** (`^`, `$`) that indicate the beginnings and endings of lines and words
-                            - **Groups** (`()`, `(?<name>)`, `(?:)`) that extracts and remember (or not) information from the input 
+                            - **Groups** (`()`, `(?<name>)`, `(?:)`) that extracts and remembers (or not) information from the input
                             - **Assertions** (`x(?=y)`) that helps at defining conditional expressions
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet
-                        
-                        </textarea
-            >
+
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1373,8 +1345,7 @@
 
                             Other flags exist, such as `s` to allow the `.` symbol to match newline characters or `u` to treat the pattern as a sequence of unicode code points. See [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags) for a full list.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1382,31 +1353,30 @@
                             ## <i class="fab fa-js"></i> Executing Regular Expressions
 
                             The following notations can be used to execute regular expressions.
-                            
+
                             ```js
                             const re = /ab+c/;
-                            
+
                             console.log(re.test("ac")); // false
                             console.log(re.test("abc")); // true
                             console.log(re.test("abbc")); // true
                             console.log(re.test("abbbc")); // true
-                            
+
                             console.log(re.exec("ac")); // null
                             console.log(re.exec("abbc")); // ['abbc', index: 0, input: 'abbc', groups: undefined]
-                            
-                            console.log(JSON.stringify([..."ac abc abbc abbbc".matchAll(/ab+c/g)])); 
+
+                            console.log(JSON.stringify([..."ac abc abbc abbbc".matchAll(/ab+c/g)]));
                             // [["abc"],["abbc"],["abbbc"]];
                             ```
-                            
+
                             In addition to `matchAll`, a string comes with the `match`, `replace`, `search` and `split` methods.
-                            
+
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
                             Notes:
-                            Note that the `...` in `[...""ac abc abbc abbbc".matchAll(/ab+c/g)])]` does not refer to a rest ! It's the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) that will expand the iterator to its elements.
+                            Note that the `...` in `[..."ac abc abbc abbbc".matchAll(/ab+c/g)])]` does not refer to a rest ! It's the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) that will expand the iterator to its elements.
 
-                        </textarea
-            >
+                        </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.8em">
@@ -1433,7 +1403,7 @@
                             let re = /([A-Z]{1,2})\.?([0-9]{1,6})/;
                             let [_, canton, number] = plate.match(re);
                             ```
-                                
+
                             ```js
                             // Text containing swiss license plates
                             let text = getText()
@@ -1441,11 +1411,10 @@
                             let re = /[A-Z]{1,2}\.?[0-9]{1,6}/g;
                             let plates = [...text.matchAll(re)];
                             ```
-                            
-                            </div>                            
-                        
-                        </textarea
-            >
+
+                            </div>
+
+                        </textarea>
           </section>
         </section>
       </div>
