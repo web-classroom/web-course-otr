@@ -122,11 +122,54 @@
 
                             `Int` n'est pas un type primitif : Javascript représente tous ses nombres, avec ou sans virgule, avec le type `Number`. Il n'existe pas de type `Int`.
 
-                            `Array` n'est pas un type primitif : c'est une fonction qui crée un objet avec des propriétés spéciales, utilisé pour représenter des tableaux de données. C'est donc un objet.
+                            `Array` n'est pas un type primitif : c'est une fonction qui créer un objet avec des propriétés spéciales, utilisé pour représenter des tableaux de données. C'est donc un objet.
 
                             [Types primitifs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values)
 
                             [Spécification des types en JS](https://262.ecma-international.org/6.0/index.html#sec-ecmascript-data-types-and-values)
+                            </div>
+                        </textarea>
+          </section>
+          <section data-markdown style="font-size: 0.8em">
+            <textarea data-template>
+                            ## <i class="fas fa-question-circle"></i> Question 3
+
+                            Etant donnée une classe `Apple` qui hérite d'une classe `Fruit`, et ayant chacune une instance `apple` et `fruit`:
+                            ```js
+                            class Fruit {}
+                            class Apple extends Fruit {}
+                            let fruit = new Fruit();
+                            let apple = new Apple();
+                            ```
+                            Quelles affirmations sont correctes ? (N.B. par prototype on entend la propriété `__proto__`)
+                            1. Le prototype de `apple` est `Apple`
+                            2. Le prototype de `Fruit` n'a pas de prototype, seuls les objets ont des prototypes
+                            3. Le prototype de `Apple.prototype` est `Fruit.prototype`
+                            4. Le prototype de `apple` est le prototype de `Fruit`
+                            5. Le prototype de `apple` est `Apple.prototype`
+                            6. Le prototype du prototype de `fruit` est `Object.prototype`
+                            7. Le prototype de `fruit` est `Fruit.prototype`
+                            8. Aucune des autres réponses
+
+                            Notes:
+
+                            <div class="spoiler">
+
+                            Les réponses 3, 5, 6 et 7 sont correctes.
+
+                            Ce qui s'apparente à une classe (`Apple` et `Fruit`) est ici une fonction qui a pour but d'être utilisée comme constructeur (avec le mot clé `new`).
+
+                            Ces "fonction constructeur" ont une propriété `prototype` qui devient le prototype des instances créés via elles.
+                            Cette propriété `prototype` est un objet comme un autre, et a elle même également un prototype (propriété `__proto__`).
+
+                            Le prototype d'`Apple.prototype` pointe sur `Fruit.prototype`.
+
+                            Les instances `apple` et `fruit` de `Apple` et `Fruit` resp. sont des objets comme les autres, et leur propriété prototype pointe sur la propriété `prototype` de la classe/constructeur qui les a construits.
+
+                            Le prototype de `apple` est donc `Apple.prototype`.
+
+                            Veillez à bien comprendre la différence *sémantique* entre les objets qui sont des instances, les objets qui sont des constructeurs/classes, et ceux qui sont des prototypes.
+
                             </div>
                         </textarea>
           </section>
@@ -164,7 +207,15 @@
 
                             <div class="spoiler">
 
-                            Une erreur est lancée. En effet, la fonction `getOlder` n'est pas appelée comme une méthode (c'est à dire avec la notation `.`). Similairement aux constructeurs, qui sont de simples fonctions s'ils ne sont pas appelés avec `new`, une méthode n'est qu'une fonction si elle n'est pas appelée avec sur un objet. Ici, la fonction `getOlder` est appelée comme une fonction, et donc `this` n'est pas défini dans son corps.
+                            32. En effet, la fonction `getOlder` n'est pas appelée comme une méthode (c'est à dire avec la notation `.`).
+
+                            Similairement aux constructeurs, qui sont de simples fonctions s'ils ne sont pas appelés avec `new`, une méthode n'est qu'une fonction si elle n'est pas appelée avec sur un objet.
+
+                            Ici, la fonction `getOlder` est appelée comme une fonction, et donc `this` est le global `this`, et donc la variable `age` ne sera pas définie (`undefined`).
+
+                            JavaScript faisant des conversions parfois inattendues, `undefined++` donne `NaN`.
+
+                            Dans tous les cas, ce sera une variable `age` définie dans le global this qui sera incrémentée, et non pas celle de l'objet, d'où le résultat de 32.
 
                             [MDN Operators this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
@@ -199,7 +250,7 @@
 
                             <div class="spoiler">
 
-                            The output will be 34 as we bind the `this` of `doTwice` to `human` and then pass it along when calling `f()`
+                            L'output sera 34 car on lie le `this` de `doTwice` à `human`, que l'on passe ensuite à `f`, qu'on reçoit en paramètre, via `f.call(this)` .
 
                             </div>
                         </textarea>
@@ -237,7 +288,9 @@
 
                             <div class="spoiler">
 
-                            The output will be 34. The fact that we create an object instance using a constructor does not change anything.
+                            L'output sera 34.
+
+                            Le fait de créer un object via un constructor ne change rien au problème de base.
 
                             </div>
                         </textarea>
