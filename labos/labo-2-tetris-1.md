@@ -86,8 +86,7 @@ Lorsqu'une pièce est placée, toute autre pièce tombante qui lui était superp
 Pour assurer le déterminisme du jeu, nous imposons l'ordre suivant de traitement des événements, au sein d'un même step :
 
 - Toute pièce pouvant être déplacée d'une case vers le bas doit l'être, puis
-- Toute pièce qui ne pouvait pas être déplacée d'une case vers le bas doit être placée, puis
-- Toute ligne complète doit être supprimée, et les lignes au-dessus déplacées d'une case vers le bas, puis
+- Toute pièce qui ne pouvait pas être déplacée d'une case vers le bas doit être placée. Si elle complète une ligne, celle-ci doit être supprimée et les lignes au-dessus déplacées d'une case vers le bas (répéter si plusieurs lignes), puis
 - Toute pièce tombante maintenant superposée à une pièce placée doit être supprimée.
 - Enfin, tout joueur n'ayant plus de pièce tombante doit en recevoir une nouvelle, placée en haut de la matrice, au centre.
 

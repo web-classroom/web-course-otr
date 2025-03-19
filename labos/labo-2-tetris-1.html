@@ -242,9 +242,9 @@ traitement des événements, au sein d’un même step :</p>
 <li>Toute pièce pouvant être déplacée d’une case vers le bas doit
 l’être, puis</li>
 <li>Toute pièce qui ne pouvait pas être déplacée d’une case vers le bas
-doit être placée, puis</li>
-<li>Toute ligne complète doit être supprimée, et les lignes au-dessus
-déplacées d’une case vers le bas, puis</li>
+doit être placée. Si elle complète une ligne, celle-ci doit être
+supprimée et les lignes au-dessus déplacées d’une case vers le bas
+(répéter si plusieurs lignes), puis</li>
 <li>Toute pièce tombante maintenant superposée à une pièce placée doit
 être supprimée.</li>
 <li>Enfin, tout joueur n’ayant plus de pièce tombante doit en recevoir
