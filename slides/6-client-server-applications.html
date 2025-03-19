@@ -456,20 +456,38 @@
 
                         </textarea>
           </section>
-          <section data-markdown style="font-size: 0.6em">
+          <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Chaining methods
 
                             Because most of the Array methods return the resulting array, they can be chained together.
 
+                            What is the value of `result` ?
+
                             ```js
                             const array = [1,2,3];
 
+                            const result = array
+                                .map(a => a**2)
+                                .filter(a => a >= 4)
+                                .reduce((a, b) => a + b, 0);
+                            ```
+
+                            Notes:
+
+                            <div class="spoiler">
+
+                            Le résultat final ici est 13, car le map transforme [1,2,3] en [1,4,9], le filter garde [4,9] et le reduce les additionne.
+
+                            ```js
+                            const array = [1,2,3];
                             const result = array
                                 .map(a => a**2) // [1,4,9]
                                 .filter(a => a >= 4) // [4,9]
                                 .reduce((a, b) => a + b, 0); // ((0 + 4) + 9) = 13
                             ```
+
+                            </div>
 
                         </textarea>
           </section>
@@ -618,7 +636,9 @@
             <textarea data-template>
               ## <i class="fab fa-js"></i> Generators - Convenient iterators
 
-              JavaScript offers a more convenient way to create iterators: Generator functions. They allow writing iterators as if they were functions that "return multiple times" with the `yield` keyword:
+              JavaScript offers a more convenient way to create iterators: **Generators**.
+
+              They allow writing iterators as if they were functions that "return multiple times" with the `yield` keyword:
 
               ```js[1-14|2-8]
               let idGenerator = {};
