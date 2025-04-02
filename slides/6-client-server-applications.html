@@ -393,7 +393,7 @@
           <section data-markdown style="font-size: 0.6em">
             <textarea data-template>
                             ## <i class="fab fa-js"></i> Array's functional methods (3/4)
-                            `reduce()` executes a reducer function on each element of the array, resulting in a single value. It behaves as follows
+                            `reduce()` executes a reducer function on each element of the array, resulting in a single value. It behaves as follows:
 
                             - The reducer is called with the provided initial value and the first value of the array.
                             - The reducer is called with the result of the previous reducer call and the next value of the array...
@@ -406,8 +406,7 @@
                             const initialValue = 0;
                             const sumWithInitial = array1.reduce(
                               (accumulator, currentValue) => accumulator + currentValue,
-                              initialValue,
-                            );
+                              initialValue);
 
                             console.log(sumWithInitial);
                             // Expected output: 10
@@ -426,7 +425,7 @@
                             var a = [1, 2, 3];
                             a.every(a => a > 0) // true
 
-                            [].every(x => x > 0) // true
+                            [].every(x => x > 0) // true ! (vacuous truth)
                             ```
 
                             `some()` tests whether at least one element in the array passes the provided predicate
@@ -435,7 +434,7 @@
                             var a = [1, 2, 3];
                             console.log(a.some(a => a > 2)) // true
 
-                            [].some(x => x > 0) //false
+                            [].some(x => x > 0) // false ! (there does not exist an element fulfilling that condition)
                             ```
 
                             `find()` and `findIndex()` return the value (or its index, respectively) of the first element in the array that satisfies the provided predicate.
@@ -453,6 +452,9 @@
                             ```
 
                             https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+                            Notes:
+                            https://en.wikipedia.org/wiki/Vacuous_truth
 
                         </textarea>
           </section>
@@ -759,7 +761,8 @@
                             When used as a class method, since there is no `function` keyword, the asterisk is put before the name :
                             ```js
                             class IdGenerator {
-                                *[Symbol.iterator]() {
+
+                                *[Symbol.iterator]() { // or : [Symbol.iterator] = function* () {
                                     let nextId = 0;
                                     while (nextId < 10) {
                                         yield nextId++;
@@ -789,6 +792,7 @@
                             ```js
                             class IdGenerator {
                                 *[Symbol.iterator]() {
+                                    // create an array using indices of an array with 10 undefined values
                                     yield* Array.from({ length: 10 }, (_, index) => index);
                                 }
                             }
@@ -801,6 +805,9 @@
                                 console.log(id); // Output: 0 1 2 ... 9
                             }
                             ```
+
+                            Notes:
+                            [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
                         </textarea>
           </section>
 
@@ -816,16 +823,19 @@
                             ```js
                             let map = new Map();
                             map.set("key", "value");
-                            map.get("key");
+                            map.get("key"); // "value"
                             map.delete("key");
                             ```
 
-                            The `Set` object lets you store unique values of any type.
+                            The `Set` object lets you store **unique** values of any type.
 
                             ```js
                             let set = new Set();
                             set.add("value");
-                            set.has("value");
+                            set.size // 1
+                            set.add("value");
+                            set.size // 1
+                            set.has("value"); // true
                             set.delete("value");
                             ```
 
@@ -840,7 +850,7 @@
                             ## <i class="fab fa-js"></i> Useful Built-in Iterables
 
                             The iterable for Map iterates over its entries, which are arrays of the form [key, value]. Hence we can
-                            iterate over the entries using the `for of` syntax:
+                            iterate over the entries using the `for..of` syntax:
 
                             ```js
                             for (let [key, value] of map) {
@@ -1081,13 +1091,18 @@
 
                             Notes:
 
-                            1. The client makes an HTTP GET request to the server
-                            2. The server receives the request and forwards the requested data to the web application
+                            1. The client makes an HTTP GET request to the web (http) server
+                            2. The server receives the request and forwards the requested data to the web application (backend)
                             3. The web application might query a database to obtain necessary data for the response
                             4. The web application generates an HTML page and sends it back to the web server
                             5. The web server sends the HTTP response containing the document to the client
                             6. The client renders the document. If it contains references to external resources, the client makes additional HTTP requests to the web server.
                             7. The web server might also retrieve files directly from the file system, for example images, CSS stylesheets, or JavaScript files.
+
+                            Additional notes :
+
+                            - There could be more than one Web Application on the "backend side".
+                            - In the simpler scenarios, sometimes the Web Application does the routing itself and there is no need for an additional Web Server.
 
                         </textarea>
           </section>
@@ -1117,6 +1132,9 @@
                             - The form's button element of type `submit` defines the button the user clicks to send the data to the server.
 
                             https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form
+
+                            Notes:
+                            The field's `name` attribute defines the key to be used on the server side to retrieve the associated data.
 
                         </textarea>
           </section>
@@ -1155,8 +1173,8 @@
                             Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web applications.
 
                             Web frameworks usually come with:
-                            - A **middleware** layer that processes HTTP requests and responses.
                             - A **router** that helps at mapping HTTP requests to the appropriate code.
+                            - A **middleware** layer that processes HTTP requests and responses.
                             - A **template engine** that helps at generating HTML pages.
 
                             https://expressjs.com/
@@ -1203,7 +1221,11 @@
 
                             Notes:
 
-                            The callback functions passed to the app.get and app.post methods are called **middleware**. There can be multiple per route, and they are executed in the order they are defined, where the last one in the chain sends the response back to the client. One can also jump to the next middleware early using the next() function. They are used to process the request and response. Technically, the application's logic runs in the context of a middleware, but it is common to separate the code handling HTTP requests and responses from the code implementing the application's logic.
+                            The callback functions passed to the app.get and app.post methods are called **middleware**.
+
+                            There can be multiple per route, and they are executed in the order they are defined, where the last one in the chain sends the response back to the client. One can also jump to the next middleware early using the next() function. They are used to process the request and response.
+
+                            Technically, the application's logic runs in the context of a middleware, but it is common to separate the code handling HTTP requests and responses from the code implementing the application's logic.
 
                         </textarea>
           </section>
