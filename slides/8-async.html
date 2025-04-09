@@ -867,23 +867,25 @@
           <section data-background="#333333">
             <h2><i class="fab fa-js"></i> Promise Exercices</h2>
           </section>
+
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i> Promise countdown
 
-                            Réécrire le code donné pour que `doInOneSecond` ne prenne plus qu'un argument, et retourne une Promise.
+                            Réécrire le code donné pour que `countDown` ne prenne plus qu'un argument, et retourne une Promise.
 
                             ```js
-                            function doInOneSecond(arg, callback) {
+                            // Prints arg, and after 1s, executes callback
+                            function countDown(arg, callback) {
                                 console.log(arg);
-                                setTimeout(callback, 500);
+                                setTimeout(callback, 1000);
                             }
 
-                            doInOneSecond("five...", function() {
-                                doInOneSecond("four...", function() {
-                                    doInOneSecond("three...", function() {
-                                        doInOneSecond("two...", function() {
-                                            doInOneSecond("one...", function() {
+                            countDown("five...", function() {
+                                countDown("four...", function() {
+                                    countDown("three...", function() {
+                                        countDown("two...", function() {
+                                            countDown("one...", function() {
                                                 console.log("fire!!!");
                                             });
                                         });
@@ -892,25 +894,27 @@
                             });
                             ```
 
+
+
                         </textarea>
           </section>
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i> Promise countdown
 
-                            Réécrire le code donné pour que `doInOneSecond` ne prenne plus qu'un argument, et retourne une Promise.
+                            Réécrire le code donné pour que `countDown` ne prenne plus qu'un argument, et retourne une Promise.
 
                             ```js
-                            function doInOneSecond(arg) {
+                            function countDown(arg) {
                                 // TODO : log arg and return a Promise that resolves in one second
                             }
 
-                            doInOneSecond("five...")
-                                .then(() => doInOneSecond("four..."))
-                                .then(() => doInOneSecond("three..."))
-                                .then(() => doInOneSecond("two..."))
-                                .then(() => doInOneSecond("one..."))
-                                .then(() => doInOneSecond("fire!!!"));
+                            countDown("five...")
+                                .then(() => countDown("four..."))
+                                .then(() => countDown("three..."))
+                                .then(() => countDown("two..."))
+                                .then(() => countDown("one..."))
+                                .then(() => countDown("fire!!!"));
                             ```
                         </textarea>
           </section>
@@ -918,20 +922,20 @@
             <textarea data-template>
                             ## <i class="fas fa-question-circle"></i> Promise countdown : then/catch Solution
 
-                            Réécrire le code donné pour que `doInOneSecond` ne prenne plus qu'un argument, et retourne une Promise.
+                            Réécrire le code donné pour que `countDown` ne prenne plus qu'un argument, et retourne une Promise.
 
                             ```js
-                            function doInOneSecond(arg) {
+                            function countDown(arg) {
                                 console.log(arg);
-                                return new Promise((onResolve) => setTimeout(onResolve, 500))
+                                return new Promise((resolve) => setTimeout(resolve, 500))
                             }
 
-                            doInOneSecond("five...")
-                                .then(() => doInOneSecond("four..."))
-                                .then(() => doInOneSecond("three..."))
-                                .then(() => doInOneSecond("two..."))
-                                .then(() => doInOneSecond("one..."))
-                                .then(() => doInOneSecond("fire!!!"));
+                            countDown("five...")
+                                .then(() => countDown("four..."))
+                                .then(() => countDown("three..."))
+                                .then(() => countDown("two..."))
+                                .then(() => countDown("one..."))
+                                .then(() => countDown("fire!!!"));
                             ```
                         </textarea>
           </section>
@@ -940,18 +944,18 @@
                             ## <i class="fas fa-question-circle"></i> Promise countdown : await Solution
 
                             ```js
-                            function doInOneSecond(arg) {
+                            function countDown(arg) {
                               console.log(arg);
                               return new Promise((resolve) => setTimeout(resolve, 500));
                             }
 
                             async function startCountdown() {
-                              await doInOneSecond("five...");
-                              await doInOneSecond("four...");
-                              await doInOneSecond("three...");
-                              await doInOneSecond("two...");
-                              await doInOneSecond("one...");
-                              await doInOneSecond("fire!!!");
+                              await countDown("five...");
+                              await countDown("four...");
+                              await countDown("three...");
+                              await countDown("two...");
+                              await countDown("one...");
+                              await countDown("fire!!!");
                             }
 
                             startCountdown();
@@ -963,7 +967,7 @@
                             ## <i class="fas fa-question-circle"></i> Promise countdown : another Solution
 
                             ```js
-                            function doInOneSecondTwo(arg) {
+                            function countDown(arg) {
                               return new Promise((onResolve) => {
                                 console.log(arg);
                                 setTimeout(() => {
@@ -972,7 +976,7 @@
                               });
                             }
 
-                            doInOneSecondTwo(5)
+                            countDown(5)
                               .then(doInOneSecondTwo)
                               .then(doInOneSecondTwo)
                               .then(doInOneSecondTwo)
