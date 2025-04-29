@@ -352,7 +352,7 @@
                             2. **Cela lance une erreur si la Promise a échoué**
                             3. **Cela évalue au résultat de la Promise si elle a réussi**
                             4. **Cela fait attendre la fonction jusqu'à ce qu'une Promise termine (settle)**
-                            5. Cela met en pause l'execution du programme JavaScript
+                            5. Cela met en pause l'exécution du programme JavaScript
                             6. Cela catch toute erreur arrivant dans la fonction async
                             7. Cela évalue au résultat de la Promise ou à son erreur
                             8. Cela crée une nouvelle Promise
@@ -493,6 +493,8 @@
                                 - Embedded static resources (images, scripts, styles, etc.)
                                 - `action` field of forms
 
+                            Notes:
+                              - `action` field of forms allows sending to another server, e.g. `<form action="http://someotherserver.com">` is allowed
                         </textarea>
           </section>
           <section data-markdown style="font-size: 0.7em">
@@ -502,10 +504,10 @@
                             An `iframe` allows embedding a page inside another page.
 
                             ```html
-                            <iframe src="https://web-classroom.github.io"></iframe>
+                            <iframe src="https://web-classroom.github.io/web-course-otr"></iframe>
                             ```
 
-                            <iframe src="https://web-classroom.github.io"></iframe>
+                            <iframe src="https://web-classroom.github.io/web-course-otr"></iframe>
                         </textarea>
           </section>
           <section data-markdown style="font-size: 0.7em">
@@ -531,13 +533,21 @@
                             #### `document.domain` *[deprecated]*
                             - Sets the domain of the current page, used in determining its origin.
                             - Can only change to a parent domain.
-                            - If set on both pages to the same domain, they can communicate.
+                            - If set on *both pages* to the same domain, they can communicate.
 
                             **Problem**: if `login.heig-vd.ch` sets `document.domain=heig-vd.ch`, then any subdomain of `heig-vd.ch` can communicate with `login.heig-vd.ch` if it also sets `document.domain=heig-vd.ch`!
+
+                            Note that if `login.heig-vd.ch` sets `document.domain=heig-vd.ch` it **cannot** access content on `heig-vd` ! The latter would also need to explicitly set `document.domain=heig-vd.ch` to allow access.
 
                             #### `postMessage`
                             - Allows message passing between iframe and embedder
 
+                            Notes:
+                            Be aware that attempting to set `document.domain` is dangerous (which is why it was deprecated).
+
+                            It opens up full access to a page's DOM from _all_ subdomains, which is likely not what is intended. It also removes the port component from the origin, so now your page can be accessed by other pages with the same IP address or same host component, even on a different port.
+
+                            Instead of using document.domain to facilitate cross-origin communication, you should use `Window.postMessage` to send an asynchronous message to the other origin.
                         </textarea>
           </section>
           <section data-markdown style="font-size: 0.7em">
@@ -546,6 +556,7 @@
 
                             ```js
                             // In embedder
+                            // target_origin is the origin the recipient window must have in order to receive the event
                             iframe.contentWindow.postMessage(<msg>, <target_origin>)
                             ```
 
@@ -629,7 +640,7 @@
             <textarea data-template>
                             ## <i class="fas fa-globe-europe"></i> Cross-Origin Resource Sharing (CORS)
 
-                            While some cross-origin requests are allowed, most are blocked (e.g. fetch, POST requests, etc).
+                            While some cross-origin requests are allowed, most are blocked (e.g. fetch, etc).
 
                             CORS is an opt-in HTTP mechanism using HTTP headers that allows selected resources to be requested from a different origin.
 
@@ -672,9 +683,11 @@
 
                             Note that the `Origin` header is sent to allow the server to make a more informed decision on its response.
 
+                            Note:
+                            If the server had not responded with the `Access-Control-Allow-Origin` header set to the correct domain (or wildcard), the browser would have discarded the response.
                         </textarea>
           </section>
-          <section data-markdown style="font-size: 0.6em">
+          <section data-markdown style="font-size: 0.55em">
             <textarea data-template>
                             # <i class="fas fa-globe-europe"></i> CORS preflight request
 
@@ -708,6 +721,8 @@
                             https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests
 
                             Notes:
+                            The server would respond to a preflight request with a `204 No Content` status code with the `Access-Control-Allow-Origin`and `Access-Control-Allow-Methods` headers (among others) listing the allowed origins and methods.
+
                             Simple requests, that is one of `GET`, `HEAD`, `POST`, but with [certain restrictions](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests) (e.g. only specific headers) are sent to the target server without additional checks, and the response is discarded if the `Access-Control-Allow-Origin` disallows the request.
 
                             This is an issue for request that can have an effect on the server (e.g. delete resources, debit an account, etc...). For those, an `OPTIONS` preflight request is made first.
@@ -750,7 +765,7 @@
 
                             Websites can store data in the browser from one request to another with **cookies**.
 
-                            With each request, the browser sends all cookies associated to that server.
+                            With each request, the browser sends all cookies associated to **that server**.
 
                             #### Use cases
                             - **Session management**: store a session ID in a cookie, and store the session data on the server.
@@ -803,7 +818,7 @@
                             Set-Cookie: cookie=choco; Expires=Wed, 21 Oct 2020 07:28:00 GMT;
                             ```
 
-                            **HttpOnly**: the cookie should not be accessible to JavaScript.
+                            **HttpOnly**: the cookie should not be accessible from JavaScript code.
                             ```http
                             Set-Cookie: cookie=choco; HttpOnly
                             ```
@@ -828,7 +843,7 @@
             <textarea data-template>
                             ## <i class="fas fa-cookie-bite"></i> Setting Cookies from the Client
 
-                            It is possible to access cookies from the same origin with javascript (unless they are `HttpOnly`).
+                            It is possible to access cookies **from the same origin** with javascript (unless they are `HttpOnly`).
 
                             ```js
                             // Object of the form {cookie1: value1, cookie2: value2, ...}
@@ -853,7 +868,7 @@
             <textarea data-template>
                             ## <i class="fas fa-cookie-bite"></i> Sessions
 
-                            The server stores data related to a browsing session (logins, shopping carts, tracking data).
+                            The server can store data related to a browsing session (logins, shopping carts, tracking data).
 
                             It identifies a browsing session with a **session ID**. A session ID
                             - must be chosen and provided by the server
@@ -893,7 +908,7 @@
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
               ## Cross-Site Request Forgery (CSRF)
-              Cookies are sent with every request to their origin, **regardless of the source of the request**, unless `SameDomain` is used or CORS prevents it (e.g. cross-origin `fetch`).
+              Cookies are sent with every request to their origin, **regardless of the source of the request**, unless `SameSite` is used or CORS prevents it (e.g. cross-origin `fetch`).
 
               CSRF is an attack which makes use of this fact to make users on a malicious website execute unwanted actions on a web app in which they're currently authenticated, even if the attacker can't read the HTTP response.
 
