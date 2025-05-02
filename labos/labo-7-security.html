@@ -40,7 +40,10 @@
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#labo-7---web-security" id="toc-labo-7---web-security">Labo
-7 - Web Security</a></li>
+7 - Web Security</a>
+<ul>
+<li><a href="#changelog" id="toc-changelog">Changelog</a></li>
+</ul></li>
 <li><a href="#informations-générales"
 id="toc-informations-générales">Informations Générales</a>
 <ul>
@@ -71,6 +74,26 @@ vulnérabilités</a></li>
 </ul>
 </nav>
 <h1 id="labo-7---web-security">Labo 7 - Web Security</h1>
+<h2 id="changelog">Changelog</h2>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 95%" />
+</colgroup>
+<thead>
+<tr>
+<th>Date</th>
+<th>Changement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02.05</td>
+<td>Reformulation - le troisième flag est bien obtenu en faisant envoyer
+un message par Echo à Nova.</td>
+</tr>
+</tbody>
+</table>
 <h1 id="informations-générales">Informations Générales</h1>
 <p><strong>WEB-B &amp; WEB-C</strong> :</p>
 <ul>
@@ -117,8 +140,8 @@ Echo et Nova.</li>
 <li>La seconde partie s’y trouve aussi, et est par ailleurs le dernier
 message que Nova a envoyé à Echo.</li>
 <li>La dernière partie n’a pas encore été partagée, mais vos compétences
-en Social Engineering vous permettent de savoir qu’elle sera transmise
-si Echo reçoit le message exact suivant :
+en Social Engineering vous permettent de savoir qu’elle sera envoyée par
+Nova à Echo, si Echo la lui demande avec le message exact suivant :
 <code>request for last part of access sequence</code></li>
 </ul>
 <h3 id="version-2">Version 2</h3>
