@@ -445,7 +445,7 @@
                   }
                   useEffect(() => { // function to be called on first render
                       const timer = setInterval(() => tick(), 1000);
-                      return () => clearInterval(timer); // cleanup function, called when component re-renders/removed
+                      return () => clearInterval(timer); // cleanup function, called when component removed
                   }, []); //when called with an empty array as a dependency, useEffect will be called only after the first render
 
                   return (
@@ -516,7 +516,7 @@
                   const [error, setError] = useState(false);
 
                   const onChange  = (e) => setValue(e.target.value);
-                  const onBlur    = () => setError(value.length === 0);
+                  const onBlur    = () => setError(value.length === 0); // when we loose focus
 
                   return <>
                       <label>{label}</label>
@@ -609,19 +609,19 @@
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
-                            ## <i class="fa-brands fa-react"></i> `useReducer`'s `dispatch`
+                ## <i class="fa-brands fa-react"></i> `useReducer`'s `dispatch`
 
-                            The `dispatch` method can be called to update the state.
+                The `dispatch` method can be called to update the state.
 
-                            It takes an action object as argument, and returns the new state. It internally calls the reducer function with the current state and the action object.
+                It takes an action object as argument, and returns the new state. It internally calls the reducer function with the current state and the action object.
 
-                            ```jsx
-                            <button onClick={() => dispatch({ type: 'increment' })}>Increment (+)</button>
-                            ```
+                ```jsx
+                <button onClick={() => dispatch({ type: 'increment' })}>Increment (+)</button>
+                ```
 
-                            By convention, the action object has a `type` property that describes the action, and other properties that describe the payload of the action.
+                By convention, the action object has a `type` property that describes the action, and other properties that describe the payload of the action.
 
-                        </textarea>
+            </textarea>
           </section>
 
 
@@ -824,6 +824,7 @@
               `useMemo` can also be used to prevent effects from firing too often by caching their dependencies.
             </textarea>
           </section>
+
           <section data-markdown style="font-size: 0.65em">
             <textarea data-template>
               ## <i class="fa-brands fa-react"></i> Preventing unnecessary renders - `React.memo()`
@@ -853,7 +854,6 @@
                 );
               };
               ```
-
             </textarea>
           </section>
 
@@ -895,7 +895,6 @@
                 return useMemo(() => fn, dependencies);
               }
               ```
-
             </textarea>
           </section>
           <!--
@@ -1111,8 +1110,8 @@
                                 }
                             ```
                         </textarea>
-          </section>
-        </section> -->
+          </section> -->
+        </section>
 
         <section>
           <section data-background="#333333" style="font-size: 0.8em">
