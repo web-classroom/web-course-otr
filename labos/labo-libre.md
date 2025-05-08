@@ -1,8 +1,61 @@
 ---
-title: Labo final - React Libre
+title: Labo final - Libre
 css: style.css
 ---
 
+| Date  | Changement                                                      |
+|-------|-----------------------------------------------------------------|
+| 08.05 | Réorganisation et remaniement du contenu pour plus de clarté |
+
+# Description
+
+Lorsque vous travaillerez sur une application Web dans le futur, il est presque
+certain que le projet en question nécessitera l'utilisation d'un framework,
+d'une librairie, d'un API Web, ou d'autres fonctionnalités que nous n'avons pas
+vues en cours, étant donnée la multitude d'options et de besoins.
+
+Dans ce laboratoire, vous allez pouvoir faire cette expérience. Nous vous
+demandons de réfléchir à une application Web de votre choix, de déterminer les
+besoins technologiques qu'elle nécessite, de trouver et de découvrir les
+solutions existantes à ces besoins, puis de vous en servir pour implémenter
+votre idée. En toute fin de semestre, nous vous demanderons ensuite de présenter
+votre projet devant le reste de la classe, afin de partager vos découvertes.
+
+## Theme
+
+Le thème de ce laboratoire est complètement libre. Vous pouvez commencer un
+nouveau projet de zéro si vous le souhaitez, mais vous êtes également libres de
+repartir du Tetris fait en cours. Pensez simplement à la charge supplémentaire que représente le
+fait de repartir de zéro.
+
+La contrainte est que le projet doit représenter une charge de travail suffisante et qu'il doit utiliser des technologies non triviales (plus que juste HTML, CSS, JS). Le but est d'explorer de nouvelles technologies/librairies.
+Par exemple, si vous souhaitez modifier le Tetris pour y ajouter le support pour une manette de console, il vous faudra apprendre à utiliser le [Gamepad API](https://developer.mozilla.org/en-US/docs/Games/Techniques/Controls_Gamepad_API), 
+ou si vous voulez faire un Tetris en AR, vous devrez trouver une librairie vous le permettant.
+
+# Timeline
+
+La timeline sera la suivante.
+
+-  **Fin des périodes de labo de la semaine du 28 avril** : Rendu des
+   informations de votre équipe ainsi que les fonctionnalités que vous allez
+   proposer. A fournir ici [Ici](https://hessoit-my.sharepoint.com/:x:/r/personal/olivier_tischhau_hes-so_ch/Documents/Web-C%20-%202025.xlsx?d=weedf6970141c4859902a1fa0cb179a23&csf=1&web=1&e=Fr2MKR).
+
+  - Le scope du projet doit refléter la taille de l'équipe. Un ordre d'idée est
+    d'avoir une fonctionnalité par personne. 
+    <!-- (par exemple, une application en
+    React, affichant des graphiques interactifs, et une carte dynamique avec
+    Leaflet pourrait être un projet pour 3 personnes). -->
+- Nous validerons ensuite votre idée, si celle-ci nous semble représenter une
+  charge de travail réaliste et suffisante. N'hésitez pas non plus à
+    discuter avec nous de votre idée avant de la soumettre, si vous avez des
+    doutes.
+
+- **Semaine du 09 juin** : Rendu et présentation de votre projet. Vous devrez
+  avoir terminé l’implémentation des améliorations que vous avez proposées, et
+  être prêts à les présenter.
+
+Nous vous encourageons vivement à venir nous voir régulièrement pour discuter de
+l'avancement de votre projet.
 
 # Présentation finale
 
@@ -20,100 +73,20 @@ contenu à présenter.
 | 3                  | 12 minutes               |
 | 4                  | 15 minutes               |
 
-<!-- 
-## Ordre de passage
-
-L'ordre de passage a été généré aléatoirement. Il est donné ici, avec les
-horaires que nous souhaitons respecter.
-
-| Équipe                   | Heure de passage |
-| ------------------------ | ---------------- |
-| Ricard, Alexandre, Calum | 13h00            |
-| Chapuis, Junod           | 13h38            |
-| Saul, Domingos, Pollien  | 13h56            |
-| Graf, Sottile, Lopez     | 14h14            |
-| Van Hove                 | 14h27            |
-| Diaz, Vuilleumier        | 14h43            |
-| Piemontesi, Trüeb        | 15h01            |
-| Bleuer, Richard, Surdez  | 15h19            |
-
-| Équipe                             | Heure de passage |
-| ---------------------------------- | ---------------- |
-| Machraoui, Komarov,                | 10h30            |
-| Koestli, Pinto, Roland,            | 10h38            |
-| Graf, Hussain, Ferrara, Ramos      | 10h58            |
-| Hutzli, Ouadahi,                   | 11h18            |
-|                                    |                  |
-| Shyshmarov, Mangold, Olivera,      | 15h00            |
-| Tranchida, Junod, Häffner, Ray     | 15h18            |
-| Zmoos, Rayburn, Mouti, Ouweis      | 15h43            |
-| Holzer, Klasen, Stadlin,           | 16h06            |
-| Dunant, Mikami, Demont, Nascimento | 16h19            |
-
-
-
-Ce dernier est susceptible de changer, mais cela ne devrait pas vous affecter
-puisque vous serez présent dès la première présentation, et votre présentation
-sera déjà terminée, n'est-ce pas ?
-
--->
-
-# Description
-
-Lorsque vous travaillerez sur une application Web dans le futur, il est presque
-certain que le projet en question nécessitera l'utilisation d'un framework,
-d'une libraIrie, d'un API Web, ou d'autres fonctionnalités que nous n'avons pas
-vues en cours, étant donné la multitude d'options et de besoins.
-
-Dans ce laboratoire, vous allez pouvoir faire cette expérience. Nous vous
-demandons de réfléchir à une application Web de votre choix, de déterminer les
-besoins technologiques qu'elle nécessite, de trouver et de découvrir les
-solutions existantes à ces besoins, puis de vous en servir pour implémenter
-votre idée. En toute fin de semestre, nous vous demanderons ensuite de présenter
-votre projet devant le reste de la classe, afin de partager vos découvertes.
-
-## Theme
-
-Le thème est complètement libre. Toutes les
-personnes sont très bienvenues à partir du Tetris fait en cours, afin d'avoir un
-point de départ déjà en place, mais vous pouvez bien sûr commencer un autre
-projet de zéro. Remarquez simplement la charge supplémentaire que représente le
-fait de repartir de zéro.
-
-# Timeline
-
-La timeline sera la suivante.
-
-- **Fin des périodes de labo de la semaine du 28 avril** : Rendu des
-  informations de votre équipe ainsi que les fonctionnalités que vous allez
-  proposer. Par exemple, si vous souhaitez ajouter le support pour une manette
-  de console, il vous faudra apprendre à utiliser le
-  [Gamepad API](https://developer.mozilla.org/en-US/docs/Games/Techniques/Controls_Gamepad_API),
-  ou si vous voulez faire un Tetris en AR, vous devrez trouver une librairie
-  vous le permettant. Mettez ces informations
-  [Ici](https://hessoit-my.sharepoint.com/:x:/r/personal/olivier_tischhau_hes-so_ch/Documents/Web-C%20-%202025.xlsx?d=weedf6970141c4859902a1fa0cb179a23&csf=1&web=1&e=Fr2MKR).
-
-- Le scope du projet doit refléter la taille de l'équipe.
-
-- Nous validerons ensuite votre idée, si celle-ci nous semble représenter une
-    charge de travail réaliste et suffisante.
-
-- **Semaine du 09 juin** : Rendu et présentation de votre projet. Vous devrez
-  avoir terminé l’implémentation des améliorations que vous avez proposées, et
-  être prêts à les présenter.
-
-Nous vous encourageons vivement à régulièrement venir nous voir pour discuter 
-de l'état d'avancement de votre projet.
+_Ces durées sont susceptibles de changer légèrement en fonction du nombre exact
+de groupes et leur taille._
 
 # Évaluation
 
-Vous serez évalué sur les critères suivants.
+Vous serez évalués sur les critères suivants.
 
-Critères de notation :
+<!--
+Critères de notation:
 
 - 0 point - Le critère n'est pas respecté
 - 1 point - Le critère est partiellement respecté
 - 2 points - Le critère est respecté
+-->
 
 ## Présentation
 
@@ -122,29 +95,38 @@ Critères de notation :
 - Respect du temps imparti (2pts) : vous avez un temps de parole défini, et il
   est important que vous le respectiez.
 - Retours sur les technologies (2pts) : vous devez présenter les librairies ou
-  APIs que vous avez utilisées, et expliquer pourquoi vous les avez choisies. Ce
-  que vous avez appris. Les pours et les contres d'utiliser cette technologie.
+  APIs que vous avez utilisées, et expliquer pourquoi vous les avez choisies, ce
+  que vous avez appris, les avantages et inconvénients de chaque technologie.
   Apprenez-nous des choses !
 - Démonstration (2pts) : vous devez faire une démonstration fonctionnelle de
   votre solution.
-- Questions (2pts) : Votre équipe doit être prête à répondre aux questions.
+- Questions (2pts) : votre équipe doit être prête à répondre aux questions.
 
 ## Code
 
 - Taux de participation (2pts) : chaque membre de l'équipe doit participer de
   manière égale.
-- Respect des délais (2pts) : vous devez rendre votre projet à temps. Ça veut
-  dire 5 minutes avant la première présentation de votre classe.
+- Respect des délais (2pts) : vous devez rendre votre projet à temps, c'est à
+  dire avant le début de la première présentation de votre classe.
 - Documentation et prise en main (2pts) : votre projet doit être facile à
   prendre en main pour une personne qui n'a pas travaillé dessus et doit
-  fonctionner sur une autre machine que celle de la démonstration. Donc, vous
-  devez fournir un README.md qui explique comment installer et lancer votre
+  fonctionner sur une autre machine que celle de la démonstration. Vous devez
+  donc fournir un `README.md` qui explique comment installer et lancer votre
   projet.
 - Le projet fonctionne (2pts) : votre projet est fonctionnel et ne contient pas
   de bugs majeurs.
-- Utilisation des bonnes pratiques (2pts) : qualité du code (vous devez utiliser
-- les bonnes pratiques recommandées par les technologies que vous
-  avez utilisées et éventuellement celles vues en cours).
-- Cahier des charges et charge de travail (2pts) : vous devez respecter les
-  améliorations que vous avez proposées, et montrer que vous avez travaillé sur
-  celles-ci tout au long du temps imparti (et pas juste la veille).
+- Utilisation des bonnes pratiques (2pts) : qualité du code et bonnes pratiques
+  recommandées par les technologies que vous avez utilisées.
+- Cahier des charges et charge de travail (2pts) : vous devez respecter votre
+  cahier des charges, et avoir réparti le travail sur tout le temps imparti (et non pas juste la veille).
+
+<!-- 
+## Ordre de passage
+
+L'ordre de passage a été généré aléatoirement. Il est donné ici, avec les
+horaires que nous souhaitons respecter.
+
+| Équipe                   | Heure de passage |
+| ------------------------ | ---------------- |
+
+-->
