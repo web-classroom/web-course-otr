@@ -349,7 +349,7 @@
 
                 Since no type can be assigned to `never`, it can also be used to have exhaustive checking in a match statement:
                 ```typescript
-                type Role = 'admin' | 'user';
+                type Role = 'admin' | 'user'; (union type, more on this later)
 
                 const authorize = (role: Role): string => {
                   switch (role) {
@@ -364,9 +364,6 @@
                   }
                 };
                 ```
-
-
-
             </textarea>
           </section>
           <section data-markdown style="font-size: 0.8em">
