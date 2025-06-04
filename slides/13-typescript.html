@@ -44,7 +44,7 @@
                             - What is Typescript?
                             - Typescript types
                             - Type aliasing
-                            - Type unions
+                            - Type unions & intersection
                             - Type assertions
                             - Functions
                             - Generics
@@ -173,17 +173,19 @@
           </section>
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
-                            ## Primitive types
+              ## Primitive types
 
-                            - `number`
-                            - `string`
-                            - `boolean`
-                            - `null`
-                            - `undefined`
+              - `number`
+              - `string`
+              - `boolean`
+              - `null`
+              - `undefined`
 
-                            We will see more about `null` and `undefined` values later; they are special.
+              We will see more about `null` and `undefined` values later; they are special.
 
-                        </textarea>
+              Note that it is not possible to access a variable that has not been initialized yet.
+
+            </textarea>
           </section>
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
@@ -240,18 +242,30 @@
 
           <section data-markdown style="font-size: 0.8em">
             <textarea data-template>
-                            ## Any type
+              ## Any type
 
-                            `any` is a special "root" type that can be any value.
+              `any` is a special "root" type that can be any value.
 
-                            ```typescript
-                            let x: any;
-                            x = 42; // OK
-                            x = "42"; // OK
-                            x = { name: "John", age: 42 }; // OK
-                            ```
+              ```typescript
+              let x: any;
+              x = 42; // OK
+              x = "42"; // OK
+              x = { name: "John", age: 42 }; // OK
+              ```
 
-                        </textarea>
+              Beware that using `any` disables further type checking for that variable !
+
+              ```typescript
+              let obj: any = { x: 0 };
+              // None of the following lines of code will throw compiler errors.
+              obj.foo();
+              obj();
+              obj.bar = 100;
+              obj = "hello";
+              const n: number = obj; // We can assign it to a number !
+              ```
+
+            </textarea>
           </section>
 
           <section data-markdown style="font-size: 0.65em">
@@ -349,7 +363,7 @@
 
                 Since no type can be assigned to `never`, it can also be used to have exhaustive checking in a match statement:
                 ```typescript
-                type Role = 'admin' | 'user'; (union type, more on this later)
+                type Role = 'admin' | 'user'; // (union type, more on this later)
 
                 const authorize = (role: Role): string => {
                   switch (role) {
@@ -479,11 +493,12 @@
             <textarea data-template>
               ## Type aliasing vs interfaces
 
-              Type Aliases and Interfaces
+              Type Aliases and Interfaces (recap)
 
               - Type aliases and interfaces are very similar, and in many cases you can choose between them freely.
               - Almost all features of an interface are available in type.
-              - The key distinction is that we can add new properties to an interface but not a type alias.
+              - One key distinction is that we can add new properties to an interface but not a type alias.
+              - The other is that we can extend an interface using `extends`.
 
               <div style="float:left;">
 
@@ -503,11 +518,11 @@
               <div style="float:left; margin-left: 5px">
 
               ```typescript
-              type Vehicle {
+              type Vehicle = {
                 color: string;
               }
 
-              type Vehicle {
+              type Vehicle = {
                 topSpeed: number;
               }
               // Error: Duplicate identifier 'Vehicle'.
