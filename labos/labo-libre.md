@@ -3,9 +3,12 @@ title: Labo final - Libre
 css: style.css
 ---
 
-| Date  | Changement                                                      |
-|-------|-----------------------------------------------------------------|
+## Changelog
+
+| Date  | Changement                                                   |
+|-------|--------------------------------------------------------------|
 | 08.05 | Réorganisation et remaniement du contenu pour plus de clarté |
+| 28.05 | Mise à jour du barème pour les labos libres                  |
 
 # Description
 
@@ -67,11 +70,11 @@ qu’une plus grande équipe aura travaillé sur plus de choses et aura donc plu
 contenu à présenter.
 
 | Taille de l'équipe | Durée de la présentation |
-| ------------------ | ------------------------ |
-| 1                  | 7 minutes                |
-| 2                  | 10 minutes               |
-| 3                  | 12 minutes               |
-| 4                  | 15 minutes               |
+| ------------------ |--------------------------|
+| 1                  | ~ 7 minutes              |
+| 2                  | ~ 10 minutes             |
+| 3                  | ~ 12 minutes             |
+| 4                  | ~ 15 minutes             |
 
 _Ces durées sont susceptibles de changer légèrement en fonction du nombre exact
 de groupes et leur taille._
@@ -88,37 +91,37 @@ Critères de notation:
 - 2 points - Le critère est respecté
 -->
 
-## Présentation
+## Présentation (9pts)
+- Répartition du temps de parole (1pt): <br/>
+  il est important que chaque personne participe de manière égale.
 
-- Répartition du temps de parole (2pts) : il est important que chaque personne
-  participe de manière égale.
-- Respect du temps imparti (2pts) : vous avez un temps de parole défini, et il
-  est important que vous le respectiez.
-- Retours sur les technologies (2pts) : vous devez présenter les librairies ou
-  APIs que vous avez utilisées, et expliquer pourquoi vous les avez choisies, ce
-  que vous avez appris, les avantages et inconvénients de chaque technologie.
-  Apprenez-nous des choses !
-- Démonstration (2pts) : vous devez faire une démonstration fonctionnelle de
-  votre solution.
-- Questions (2pts) : votre équipe doit être prête à répondre aux questions.
+- Respect du temps imparti (1pt) : <br/>
+  vous avez un temps de parole défini, et il est important que vous le respectiez.
 
-## Code
+- Retour sur les technologies (3pts): <br/>
+  vous devez présenter les librairies ou APIs que vous avez utilisées, et expliquer pourquoi vous les avez choisies, ce que vous avez appris, les avantages et inconvénients de chaque technologie. Apprenez-nous des choses !
 
-- Taux de participation (2pts) : chaque membre de l'équipe doit participer de
-  manière égale.
-- Respect des délais (2pts) : vous devez rendre votre projet à temps, c'est à
-  dire avant le début de la première présentation de votre classe.
-- Documentation et prise en main (2pts) : votre projet doit être facile à
-  prendre en main pour une personne qui n'a pas travaillé dessus et doit
-  fonctionner sur une autre machine que celle de la démonstration. Vous devez
-  donc fournir un `README.md` qui explique comment installer et lancer votre
-  projet.
-- Le projet fonctionne (2pts) : votre projet est fonctionnel et ne contient pas
-  de bugs majeurs.
-- Utilisation des bonnes pratiques (2pts) : qualité du code et bonnes pratiques
-  recommandées par les technologies que vous avez utilisées.
-- Cahier des charges et charge de travail (2pts) : vous devez respecter votre
-  cahier des charges, et avoir réparti le travail sur tout le temps imparti (et non pas juste la veille).
+- Demo (2pts): <br />
+  vous devez faire une démonstration fonctionnelle de votre solution.
+
+- Réponse aux questions (2pts): <br />
+  votre équipe doit être prête à répondre aux questions.
+
+## Code (16pts)
+- Respect des délais et répartition du travail sur la durée (2pts): <br />
+  Vous devez rendre votre projet à temps, et avoir réparti le travail sur tout le temps imparti.
+
+- Documentation et prise en main (3pts): <br />
+  Votre projet doit être facile à prendre en main pour une personne qui n'a pas travaillé dessus et doit fonctionner sur une autre machine que celle de la démonstration. Vous devez donc indiquer dans le `README.md` (ou autre fichier) comment installer et lancer votre projet.
+
+- Le projet fonctionne (3pts): <br />
+  Votre projet est fonctionnel et ne contient pas de bugs majeurs.
+
+- Bonnes pratiques & utilisation des technologies (3pts): <br />
+  Qualité du code et bonnes pratiques recommandées par les technologies que vous avez utilisées ainsi que le bon usage des technologies.
+
+- Respect du cahier des charges (5pts): <br />
+  Vous devez respecter votre cahier des charges.
 
 <!-- 
 ## Ordre de passage
