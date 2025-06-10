@@ -65,12 +65,12 @@ l'avancement de votre projet.
 
 ## Durée de votre présentation
 
-Vos présentations ne devront **strictement** pas dépasser les durées suivantes,
+Vos présentations ne devront **strictement** pas dépasser les durées maximales suivantes,
 en fonction de la taille de votre équipe. Ce choix est justifié par le fait
 qu’une plus grande équipe aura travaillé sur plus de choses et aura donc plus de
 contenu à présenter.
 
-| Taille de l'équipe | Durée de la présentation                  |
+| Taille de l'équipe | Durée de la présentation (min-max)        |
 | ------------------ |-------------------------------------------|
 | 1                  | 7-10 minutes + ~2 min pour les questions  |
 | 2                  | 10-13 minutes + ~3 min pour les questions |
