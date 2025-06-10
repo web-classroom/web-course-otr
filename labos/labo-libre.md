@@ -70,15 +70,12 @@ en fonction de la taille de votre équipe. Ce choix est justifié par le fait
 qu’une plus grande équipe aura travaillé sur plus de choses et aura donc plus de
 contenu à présenter.
 
-| Taille de l'équipe | Durée de la présentation               |
-| ------------------ |----------------------------------------|
-| 1                  | 10 minutes (~2 min pour les questions) |
-| 2                  | 15 minutes (~4 min pour les questions) |
-| 3                  | 20 minutes (~5 min pour les questions) |
-| 4                  | 25 minutes (~5 min pour les questions) |
-
-_Ces durées sont susceptibles de changer légèrement en fonction du nombre exact
-de groupes et leur taille._
+| Taille de l'équipe | Durée de la présentation                |
+| ------------------ |-----------------------------------------|
+| 1                  | 7-10 minutes + ~2 min pour les questions  |
+| 2                  | 11-13 minutes + ~3 min pour les questions |
+| 3                  | 13-15 minutes + ~4 min pour les questions |
+| 4                  | 16-19 minutes + ~5 min pour les questions |
 
 # Évaluation
 
@@ -123,6 +120,12 @@ Critères de notation:
 
 - Respect du cahier des charges (5pts): <br />
   Vous devez respecter votre cahier des charges.
+
+# Répartition du travail entre membres
+
+En cas de répartition inégale du travail entre les membres de l’équipe, une pénalité pour les membres qui ont participé sensiblement moins que les autres pourrait être appliquée.
+
+Nous nous baserons sur les commits de l’historique Git pour nous faire une idée de la répartition. Si vous avez travaillé en “Peer Programming”, ou en cas de doute, vous pouvez aussi spécifier la contribution de chaque membre dans le README.md de votre projet.
 
 <!-- 
 ## Ordre de passage
