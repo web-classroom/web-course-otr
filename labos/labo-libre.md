@@ -9,6 +9,7 @@ css: style.css
 |-------|--------------------------------------------------------------|
 | 08.05 | Réorganisation et remaniement du contenu pour plus de clarté |
 | 28.05 | Mise à jour du barème pour les labos libres                  |
+| 10.06 | Mise à jour des temps de présentation                        |
 
 # Description
 
@@ -69,12 +70,12 @@ en fonction de la taille de votre équipe. Ce choix est justifié par le fait
 qu’une plus grande équipe aura travaillé sur plus de choses et aura donc plus de
 contenu à présenter.
 
-| Taille de l'équipe | Durée de la présentation |
-| ------------------ |--------------------------|
-| 1                  | ~ 7 minutes              |
-| 2                  | ~ 10 minutes             |
-| 3                  | ~ 12 minutes             |
-| 4                  | ~ 15 minutes             |
+| Taille de l'équipe | Durée de la présentation               |
+| ------------------ |----------------------------------------|
+| 1                  | 10 minutes (~2 min pour les questions) |
+| 2                  | 15 minutes (~4 min pour les questions) |
+| 3                  | 20 minutes (~5 min pour les questions) |
+| 4                  | 25 minutes (~5 min pour les questions) |
 
 _Ces durées sont susceptibles de changer légèrement en fonction du nombre exact
 de groupes et leur taille._
@@ -126,10 +127,11 @@ Critères de notation:
 <!-- 
 ## Ordre de passage
 
-L'ordre de passage a été généré aléatoirement. Il est donné ici, avec les
-horaires que nous souhaitons respecter.
+L'ordre de passage est donné ci-dessous, avec les horaires que nous souhaitons respecter.
 
 | Équipe                   | Heure de passage |
 | ------------------------ | ---------------- |
+| Équipe 1 (1 personne)    | 09:00            |
+!
 
 -->
