@@ -70,11 +70,11 @@ en fonction de la taille de votre équipe. Ce choix est justifié par le fait
 qu’une plus grande équipe aura travaillé sur plus de choses et aura donc plus de
 contenu à présenter.
 
-| Taille de l'équipe | Durée de la présentation                |
-| ------------------ |-----------------------------------------|
+| Taille de l'équipe | Durée de la présentation                  |
+| ------------------ |-------------------------------------------|
 | 1                  | 7-10 minutes + ~2 min pour les questions  |
-| 2                  | 11-13 minutes + ~3 min pour les questions |
-| 3                  | 13-15 minutes + ~4 min pour les questions |
+| 2                  | 10-13 minutes + ~3 min pour les questions |
+| 3                  | 13-16 minutes + ~4 min pour les questions |
 | 4                  | 16-19 minutes + ~5 min pour les questions |
 
 # Évaluation
